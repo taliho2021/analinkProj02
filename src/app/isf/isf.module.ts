@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     CommonModule,
+    IsfRoutingModule,
     FormsModule,
     MatTabsModule,
     MatButtonModule,
@@ -33,8 +35,8 @@ import { NgModule } from '@angular/core';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    FormsModule,
-    IsfRoutingModule
+    SharedModule
+  
   ]
 })
 export class IsfModule { }
