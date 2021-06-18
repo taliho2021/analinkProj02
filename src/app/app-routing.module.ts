@@ -15,7 +15,8 @@ const routes: Routes = [
     { path: 'reports', loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule) }, 
     { path: 'apps', loadChildren: () => import('./apps/apps.module').then(m => m.AppsModule) },
     { path: 'shared', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
-    { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)}];
+    { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)},
+    { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

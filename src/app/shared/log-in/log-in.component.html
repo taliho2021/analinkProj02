@@ -10,14 +10,15 @@
     <form class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username">
+          <input matInput type="text" placeholder="Username">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password">
+          <input matInput type="password" placeholder="Password">
         </mat-form-field>
       </mat-card-content>
-      <button mat-stroked-button color="accent" class="btn-block">Sign-in</button>
+      <button mat-stroked-button color="accent" class="btn-block" *ngIf="!authService.isLoggedIn" (click)="login()">Sign-in</button>
+      <button mat-stroked-button color="primary" class="btn-block" *ngIf="authService.isLoggedIn" (click)="logout()">Log Out</button>
     </form>
   </mat-card>
 
