@@ -1,10 +1,6 @@
-import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, delay, tap } from 'rxjs/operators';
-
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../models/user.model';
 
 export interface AuthResponseData {
   kind: string;
@@ -21,83 +17,41 @@ export interface AuthResponseData {
 })
 export class AuthService {
 
-  isLoggedIn = false;
-  user = new BehaviorSubject<User>(null);
-  private tokenExpirationTimer: any;
 
-  constructor(private http:HttpClient, private router: Router) { }
+  constructor(public afAuth: AngularFireAuth, public router: Router) {
+    this.afAuth.authState.subscribe(user => {
+      if (user){
+        this.user = user;
+        localStorage.setItem('user', JSON.stringify(this.user));
+      } else {
+        localStorage.setItem('user', null!);
+      }
+    })
+   }
 
-  // store the URL so we can redirect after logging in
-  redirectUrl: string | null = null;
+   async login(email: string, password: string) {
+    var result = await this.afAuth.signInWithEmailAndPassword(email, password)
+    this.router.navigate(['admin/list']);
+}
 
-  login(email: string, password: string) {
-    return this.http
-      .post<AuthResponseData> (
-        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDb0xTaRAoxyCgvaDF3kk5VYOsTwB_3o7Y',
-        {
-          email: email,
-          password: password,
-          returnSecureToken: true
-        }
-      )
-      .pipe(
-        catchError(this.handleError),
-        tap(resData => {
-          this.handleAuthentication(
-            resData.email,
-            resData.localId,
-            resData.idToken,
-            +resData.expiresIn
-          );
-        })
-      );
-  }
+async sendPasswordResetEmail(passwordResetEmail: string) {
+  return await this.afAuth.sendPasswordResetEmail(passwordResetEmail);
+}
 
-  logout() {
-    this.user.next(null);
-    this.router.navigate(['/auth']);
-    localStorage.removeItem('userData');
-    if (this.tokenExpirationTimer) {
-      clearTimeout(this.tokenExpirationTimer);
-    }
-    this.tokenExpirationTimer = null;
-  }
+async logout(){
+  await this.afAuth.signOut();
+  localStorage.removeItem('user');
+  this.router.navigate(['admin/login']);
+}
 
-  autoLogout(expirationDuration: number) {
-    this.tokenExpirationTimer = setTimeout(() => {
-      this.logout();
-    }, expirationDuration);
-  }
+get isLoggedIn(): boolean {
+  const  user  =  JSON.parse(localStorage.getItem('user')!);
+  return  user  !==  null;
+}
 
-  private handleAuthentication(
-    email: string,
-    userId: string,
-    token: string,
-    expiresIn: number
-  ) {
-    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-    const user = new User(email, userId, token, expirationDate);
-    this.user.next(user);
-    this.autoLogout(expiresIn * 1000);
-    localStorage.setItem('userData', JSON.stringify(user));
-  }
+async  loginWithGoogle(){
+  await  this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
+  this.router.navigate(['admin/list']);
+}
 
-  private handleError(errorRes: HttpErrorResponse) {
-    let errorMessage = 'An unknown error occurred!';
-    if (!errorRes.error || !errorRes.error.error) {
-      return throwError(errorMessage);
-    }
-    switch (errorRes.error.error.message) {
-      case 'EMAIL_EXISTS':
-        errorMessage = 'This email exists already';
-        break;
-      case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email does not exist.';
-        break;
-      case 'INVALID_PASSWORD':
-        errorMessage = 'This password is not correct.';
-        break;
-    }
-    return throwError(errorMessage);
-  }
 }
