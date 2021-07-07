@@ -21,6 +21,7 @@ export interface AuthResponseData {
 })
 export class AuthService {
 
+<<<<<<< HEAD
   API_URL: string = 'http://localhost:3000';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
@@ -80,4 +81,43 @@ export class AuthService {
     }
     return throwError(msg);
   }
+=======
+
+  constructor(public afAuth: AngularFireAuth, public router: Router) {
+    this.afAuth.authState.subscribe(user => {
+      if (user){
+        this.user = user;
+        localStorage.setItem('user', JSON.stringify(this.user));
+      } else {
+        localStorage.setItem('user', null!);
+      }
+    })
+   }
+
+   async login(email: string, password: string) {
+    var result = await this.afAuth.signInWithEmailAndPassword(email, password)
+    this.router.navigate(['admin/list']);
+}
+
+async sendPasswordResetEmail(passwordResetEmail: string) {
+  return await this.afAuth.sendPasswordResetEmail(passwordResetEmail);
+}
+
+async logout(){
+  await this.afAuth.signOut();
+  localStorage.removeItem('user');
+  this.router.navigate(['admin/login']);
+}
+
+get isLoggedIn(): boolean {
+  const  user  =  JSON.parse(localStorage.getItem('user')!);
+  return  user  !==  null;
+}
+
+async  loginWithGoogle(){
+  await  this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
+  this.router.navigate(['admin/list']);
+>>>>>>> f23bafa10934d1c6260374f6e7b5c08d5d2a45ba
+}
+
 }

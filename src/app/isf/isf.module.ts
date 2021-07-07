@@ -23,6 +23,13 @@ import { SharedModule } from '../shared/shared.module';
     IsfPartiesComponent,
     IsfHtsComponent
   ],
+  exports: [
+    IsfComponent,
+    IsfHeaderComponent,
+    IsfPartiesComponent,
+    IsfHtsComponent
+  ],
+  
   imports: [
     CommonModule,
     IsfRoutingModule,

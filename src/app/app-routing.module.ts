@@ -1,10 +1,13 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { AppComponent } from './app.component';
 import { LogInComponent } from './shared/log-in/log-in.component';
+import { NaviComponent } from './shared/navi/navi.component';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-    { path: '', component: LogInComponent},
+    {path: '', component: NaviComponent },
+    { path: 'log-in', component: LogInComponent},
     { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }, 
     { path: 'isf', loadChildren: () => import('./isf/isf.module').then(m => m.IsfModule) },
     { path: 'ams', loadChildren: () => import('./ams/ams.module').then(m => m.AmsModule) },
