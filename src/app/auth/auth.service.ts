@@ -1,10 +1,10 @@
-import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, delay, tap } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../models/user.model';
+import { User } from '../models/user';
 
 export interface AuthResponseData {
   kind: string;
@@ -21,83 +21,63 @@ export interface AuthResponseData {
 })
 export class AuthService {
 
-  isLoggedIn = false;
-  user = new BehaviorSubject<User>(null);
-  private tokenExpirationTimer: any;
+  API_URL: string = 'http://localhost:3000';
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
+  currentUser = {};
 
-  constructor(private http:HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient,public router: Router){}
 
-  // store the URL so we can redirect after logging in
-  redirectUrl: string | null = null;
+  register(user: User): Observable<any> {
 
-  login(email: string, password: string) {
-    return this.http
-      .post<AuthResponseData> (
-        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDb0xTaRAoxyCgvaDF3kk5VYOsTwB_3o7Y',
-        {
-          email: email,
-          password: password,
-          returnSecureToken: true
-        }
-      )
-      .pipe(
-        catchError(this.handleError),
-        tap(resData => {
-          this.handleAuthentication(
-            resData.email,
-            resData.localId,
-            resData.idToken,
-            +resData.expiresIn
-          );
+    return this.httpClient.post(`${this.API_URL}/users/register`, user).pipe(
+        catchError(this.handleError)
+    )
+  }
+
+  login(user: User) {
+    return this.httpClient.post<any>(`${this.API_URL}/users/login`, user)
+      .subscribe((res: any) => {
+        localStorage.setItem('access_token', res.token)
+        this.getUserProfile(res._id).subscribe((res) => {
+          this.currentUser = res;
+          this.router.navigate(['users/profile/' + res.msg._id]);
         })
-      );
+      })
+  }
+
+  getAccessToken() {
+    return localStorage.getItem('access_token');
+  }
+
+  get isLoggedIn(): boolean {
+    let authToken = localStorage.getItem('access_token');
+    return (authToken !== null) ? true : false;
   }
 
   logout() {
-    this.user.next(null);
-    this.router.navigate(['/auth']);
-    localStorage.removeItem('userData');
-    if (this.tokenExpirationTimer) {
-      clearTimeout(this.tokenExpirationTimer);
+    if (localStorage.removeItem('access_token') == null) {
+      this.router.navigate(['users/login']);
     }
-    this.tokenExpirationTimer = null;
   }
 
-  autoLogout(expirationDuration: number) {
-    this.tokenExpirationTimer = setTimeout(() => {
-      this.logout();
-    }, expirationDuration);
+  getUserProfile(id): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}/users/profile/${id}`, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {}
+      }),
+      catchError(this.handleError)
+    )
   }
 
-  private handleAuthentication(
-    email: string,
-    userId: string,
-    token: string,
-    expiresIn: number
-  ) {
-    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-    const user = new User(email, userId, token, expirationDate);
-    this.user.next(user);
-    this.autoLogout(expiresIn * 1000);
-    localStorage.setItem('userData', JSON.stringify(user));
-  }
-
-  private handleError(errorRes: HttpErrorResponse) {
-    let errorMessage = 'An unknown error occurred!';
-    if (!errorRes.error || !errorRes.error.error) {
-      return throwError(errorMessage);
+  handleError(error: HttpErrorResponse) {
+    let msg = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      msg = error.error.message;
+    } else {
+      // server-side error
+      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    switch (errorRes.error.error.message) {
-      case 'EMAIL_EXISTS':
-        errorMessage = 'This email exists already';
-        break;
-      case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email does not exist.';
-        break;
-      case 'INVALID_PASSWORD':
-        errorMessage = 'This password is not correct.';
-        break;
-    }
-    return throwError(errorMessage);
+    return throwError(msg);
   }
 }
