@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { LogInComponent } from './shared/log-in/log-in.component';
 import { NaviComponent } from './shared/navi/navi.component';
 import { NgModule } from '@angular/core';
@@ -18,9 +17,8 @@ const routes: Routes = [
     { path: 'reports', loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule) }, 
     { path: 'apps', loadChildren: () => import('./apps/apps.module').then(m => m.AppsModule) },
     { path: 'shared', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
-    { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)},
-    { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) }];
-
+    { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)}
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
