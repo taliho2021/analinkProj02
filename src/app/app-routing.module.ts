@@ -1,11 +1,13 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogInComponent } from './shared/log-in/log-in.component';
 import { NaviComponent } from './shared/navi/navi.component';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
     {path: '', component: NaviComponent },
+    {path: 'home', component: DashboardComponent},
     { path: 'log-in', component: LogInComponent},
     { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }, 
     { path: 'isf', loadChildren: () => import('./isf/isf.module').then(m => m.IsfModule) },

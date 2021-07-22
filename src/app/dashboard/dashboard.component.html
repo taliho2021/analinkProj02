@@ -1,1 +1,83 @@
-<p>dashboard works!</p>
+<h1>Dashboard # 1</h1>
+
+<form class="container-fluid">
+    <mat-card>
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="month" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </mat-card>
+   
+    <mat-card>
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="password" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>  
+    
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="time" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </mat-card>
+    
+    <mat-card>
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>  
+    
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>  
+    </mat-card>
+    
+
+    <mat-form-field appearance="fill" class="col-3">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-3">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-3">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>  
+
+</form>
