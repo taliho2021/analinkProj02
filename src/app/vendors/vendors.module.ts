@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { VendorsRoutingModule } from './vendors-routing.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NgModule } from '@angular/core';
 import { VendorsComponent } from './vendors.component';
-
+import { VendorsRoutingModule } from './vendors-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,10 @@ import { VendorsComponent } from './vendors.component';
   ],
   imports: [
     CommonModule,
-    VendorsRoutingModule
+    VendorsRoutingModule,
+    MatCardModule,
+    MatIconModule,
+    MatTabsModule
   ]
 })
 export class VendorsModule { }
