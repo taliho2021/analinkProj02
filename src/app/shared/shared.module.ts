@@ -2,8 +2,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AddressDoComponent } from './address-do/address-do.component';
 import { AddressFnComponent } from './address-fn/address-fn.component';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireModule } from '@angular/fire';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './log-in/log-in.component';
@@ -54,9 +52,7 @@ const firebaseConfig = {
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    SharedRoutingModule
   ],
   exports: [
     LogInComponent,

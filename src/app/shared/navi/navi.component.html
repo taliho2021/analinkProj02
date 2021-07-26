@@ -12,9 +12,9 @@
           </div>
           <img src="https://cdn.picpng.com/avatar/avatar-boy-cartoon-comic-human-43339.png" alt="Tal Yo">
         </div>
-  
+
         <mat-divider></mat-divider>
-  
+
         <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item">{{item | titlecase}}</a>
       </mat-nav-list>
     </mat-sidenav>
@@ -31,9 +31,9 @@
         <button mat-button (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-  
+
         <span>ANA LINK, LTD</span>
-  
+
         <!-- Right side of top portion of navbar -->
         <span class="example-spacer"></span>
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [mat-menu-trigger-for] ="menu1">
@@ -45,7 +45,7 @@
             <button mat-menu-item routerLink="signin" routerLinkActive="active">Log In</button>
           </mat-menu>
         </button>
-  
+
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu2">
          <mat-icon>share</mat-icon>
          <mat-menu #menu2 = "matMenu">
@@ -54,7 +54,7 @@
           <button mat-menu-item routerLink="signout" routerLinkActive="active">Log Out</button>
         </mat-menu>
         </button>
-  
+
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu3">
           <mat-icon>settings</mat-icon>
           <mat-menu #menu3 = "matMenu">
@@ -63,16 +63,16 @@
            <button mat-menu-item>Others</button>
          </mat-menu>
          </button>
-  
-         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu4"> 
-          <mat-icon>help_outline</mat-icon> 
+
+         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu4">
+          <mat-icon>help_outline</mat-icon>
           <mat-menu #menu4 = "matMenu">
            <button mat-menu-item>Import</button>
            <button mat-menu-item>Export</button>
            <button mat-menu-item>Others</button>
          </mat-menu>
          </button>
-  
+
          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu5">
           <mat-icon>person_outline</mat-icon>
           <mat-menu #menu5 = "matMenu">
@@ -81,11 +81,10 @@
            <button mat-menu-item>Others</button>
          </mat-menu>
          </button>
-  
+
       </mat-toolbar>
-  
+
       <!-- Add Content Here -->
-      <router-outlet></router-outlet>
+         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
-  

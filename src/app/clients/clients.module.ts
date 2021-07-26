@@ -12,7 +12,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { SharedModule } from '../shared/shared.module';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    SharedModule,
     ClientsRoutingModule
   ]
 })

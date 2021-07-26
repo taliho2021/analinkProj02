@@ -83,4 +83,33 @@
       </mat-card-content>
       </mat-card>
   </form>
-  
+
+  <!-- Country list table -->
+  <div *ngIf = "Countries.length !==0">
+    <h3 class="mb-3 text-center">Contries List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Country Name</th>
+            <th scope="col">Abbreviation</th>
+            <th scope="col">Action to take</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of Countries">
+            <td>{{country.country}}</td>
+            <td>{{country.abbreviation}}</td>
+            <td>
+              <span>Edit</span>
+              <span>Delete</span>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+

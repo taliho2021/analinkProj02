@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Country, CountryService } from 'src/app/services/country.service';
 import { FormBuilder, Validators } from '@angular/forms';
+
+import { Country } from '../../models/country';
+import { CountryService } from 'src/app/services/country.service';
 
 @Component({
   selector: 'app-address-fn',
@@ -26,10 +28,10 @@ export class AddressFnComponent implements OnInit {
   });
 
   hasUnitNumber = false;
-  countries: [] | undefined
+  Countries: any =[];
 
   constructor(private fb: FormBuilder, private country: CountryService) { }
-  
+
   ngOnInit(): void {
   }
 
@@ -38,7 +40,9 @@ export class AddressFnComponent implements OnInit {
   }
 
   showCountries() {
-      this.country.getCountries();        ;
+      return this.country.getCountries().subscribe((data:{}) =>{
+        this.Countries = data;
+      })
   }
 
 }
