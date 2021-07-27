@@ -1,29 +1,7 @@
-import * as customerData from '../../../assets/data/customers.json';
-
 import { Component, OnInit } from '@angular/core';
 
-interface Country {
-  name?: string;
-  code?:string;
-}
-
-interface Representative {
-  name?: string;
-  image?: string;
-}
-
-interface Customer {
-  id?: number;
-  name?: string;
-  country?: Country;
-  company?: string;
-  date? : string | Date;
-  status?: string;
-  activity?: number;
-  representative?: Representative;
-  verified?: boolean;
-  balance?: number;
-}
+import { Customer } from '../../models/customer';
+import { CustomersService } from 'src/app/services/customers.service';
 
 @Component({
   selector: 'app-customers',
@@ -33,11 +11,17 @@ interface Customer {
 export class CustomersComponent implements OnInit {
   name = "Customers"
 
-  public customers: Customer[] = customerData;
+  customers: Customer[] =[];
 
-  constructor() { }
+  constructor(private customerService: CustomersService) { }
 
   ngOnInit(): void {
+    this.getCustomers();
+  }
+
+  getCustomers(){
+    this.customerService.getCustomers()
+      .subscribe(data => (this.customers = data))
   }
 
 }
