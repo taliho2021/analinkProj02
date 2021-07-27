@@ -1,0 +1,22 @@
+<h1>Customers Page</h1>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.name}}</td>
+        <td>{{ customer.company }}</td>
+        <td>{{ customer.activity }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

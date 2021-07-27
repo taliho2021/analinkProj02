@@ -12,11 +12,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
   declarations: [
     ClientsComponent,
-    ImportersComponent
+    ImportersComponent,
+    CustomersComponent
   ],
   imports: [
     CommonModule,
