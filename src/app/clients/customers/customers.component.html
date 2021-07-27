@@ -7,6 +7,8 @@
         <th>ID</th>
         <th>Name</th>
         <th>Company</th>
+        <th>Status</th>
+        <th>Activity</th>
         <th>Balance</th>
       </tr>
     </thead>
@@ -15,7 +17,9 @@
         <td>{{ cus.id }}</td>
         <td>{{ cus.name}}</td>
         <td>{{ cus.company }}</td>
+        <td>{{ cus.status }} </td>
         <td>{{ cus.activity }}</td>
+        <td>{{ cus.balance | currency}} </td>
       </tr>
     </tbody>
   </table>

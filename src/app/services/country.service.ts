@@ -9,21 +9,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CountryService {
+  data_URL: string ='assets/data/countries.json'
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  COUNTRY_DATA: any =[]
+    constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) { }
-
-  getCountries(): Observable<Country> {
-    return this.http.get<Country>('assets/data/countries.json')
+  getCountries() {
+    return this.http.get<Country[]>(this.data_URL)
      .pipe(
        retry(2),
        catchError(this.handleError)
      )
-  }
-
-  getStates(){
-    return this.http.get('assets/data/states.json');
   }
 
   handleError(error: { error: { message: string; }; status: any; message: any; } ){

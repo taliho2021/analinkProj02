@@ -33,6 +33,7 @@ export class AddressFnComponent implements OnInit {
   constructor(private fb: FormBuilder, private country: CountryService) { }
 
   ngOnInit(): void {
+    this.showCountries();
   }
 
   onSubmit(): void {
