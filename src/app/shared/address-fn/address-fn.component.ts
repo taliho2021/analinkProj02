@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 import { Country } from '../../models/country';
 import { CountryService } from 'src/app/services/country.service';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-address-fn',
@@ -30,7 +31,7 @@ export class AddressFnComponent implements OnInit {
   hasUnitNumber = false;
   Countries: any =[];
 
-  constructor(private fb: FormBuilder, private country: CountryService) { }
+  constructor(private fb: FormBuilder, private country: CountryService, private state: StateService) { }
 
   ngOnInit(): void {
     this.showCountries();
