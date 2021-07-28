@@ -1,6 +1,7 @@
 import { ClientsComponent } from './clients.component';
 import { ClientsRoutingModule } from './clients-routing.module';
 import { CommonModule } from '@angular/common';
+import { CustomersComponent } from './customers/customers.component';
 import { ImportersComponent } from './importers/importers.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -12,7 +13,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,9 @@ import { CustomersComponent } from './customers/customers.component';
     MatSelectModule,
     MatFormFieldModule,
     ClientsRoutingModule
+  ],
+  exports: [
+    CustomersComponent
   ]
 })
 export class ClientsModule { }

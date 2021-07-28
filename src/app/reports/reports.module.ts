@@ -1,3 +1,4 @@
+import { ClientsModule } from '../clients/clients.module';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +16,8 @@ import { ReportsRoutingModule } from './reports-routing.module';
     ReportsRoutingModule,
     MatCardModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    ClientsModule
   ]
 })
 export class ReportsModule { }
