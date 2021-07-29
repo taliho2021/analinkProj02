@@ -26,8 +26,30 @@
     padding: 0 20px 20px 20px;
     img {
       width: 100px;
-      height: 100px;
+      height: 50px;
       object-fit: cover;
       border-radius: 50%;
    }
   }
+
+  mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+  }
+  
+  .mat-sidenav {
+    width: 220px;
+  }
+  
+  button.menu-button {
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+  .mat-icon {
+    margin: 10px;
+    border: 20px;
+  }
+
