@@ -6,7 +6,7 @@ import { TablesComponent } from './tables.component';
 
 const routes: Routes = [
   {  path: '', component: TablesComponent },
-  { path: 'countries', component:CountriesComponent}
+  {  path: 'countries', component:CountriesComponent}
 ];
 
 @NgModule({
