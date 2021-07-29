@@ -1,5 +1,6 @@
 import { CbComponent } from './cb.component';
 import { CbRoutingModule } from './cb-routing.module';
+import { ChartsModule } from '../charts/charts.module';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +16,8 @@ import { NgModule } from '@angular/core';
     CbRoutingModule,
     MatCardModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    ChartsModule
   ]
 })
 export class CbModule { }

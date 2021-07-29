@@ -17,7 +17,8 @@ const routes: Routes = [
     { path: 'isf', loadChildren: () => import('./isf/isf.module').then(m => m.IsfModule) },
     { path: 'ams', loadChildren: () => import('./ams/ams.module').then(m => m.AmsModule) },
     { path: 'shared', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
-    { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)}
+    { path: 'landing', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)},
+    { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule) }
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

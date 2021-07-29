@@ -67,7 +67,13 @@ export let menu: NavItem[] = [
         displayName: 'AMS',
         iconName:'feed',
         route: 'ams'
-    }
+    },
+
+    {   
+        displayName: 'My Charts',
+        iconName: 'grid_4x4',
+        route: 'charts'
+}
 
     
 
