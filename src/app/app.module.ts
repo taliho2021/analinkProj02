@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CountryService } from './services/country.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { IsfModule } from './isf/isf.module';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
+import { VarChartsModule } from './var-charts/var-charts.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    IsfModule
+    IsfModule,
+    FlexLayoutModule,
+    VarChartsModule
   ],
   providers: [CountryService],
   bootstrap: [AppComponent]
