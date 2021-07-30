@@ -1,5 +1,96 @@
-<div class="wrapper">
-    <app-isf-header></app-isf-header>
-    <app-isf-parties></app-isf-parties>
-    <app-isf-hts></app-isf-hts>
+<mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">account_box</mat-icon>
+          ISF Summary
+      </ng-template>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>ISF Summary Screen</mat-card-title>
+          <mat-card-subtitle>All existing ISF filings</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">ISF Txn No</th>
+                        <th scope="col">S</th>
+                        <th scope="col">D</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Act</th>
+                        <th scope="col">H B/L</th>
+                        <th scope="col">File No</th>
+                        <th scope="col">Cust Ref #</th>
+                        <th scope="col">Importer</th>
+                        <th scope="col">Entry No</th>
+                        <th scope="col">Filer</th>
+                        <th scope="col">Last Updated</th>
+                        <th scope="col">Add'l Memo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+    
+                    </tr>
+                </tbody>
+
+            </table>
+            <button mat-raised-button color='primary'> Details</button>
+        </mat-card-content>
+      </mat-card>
+    
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">assessment</mat-icon>
+        ISF - New Filing
+      </ng-template>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>New ISF Filing</mat-card-title>
+          <mat-card-subtitle>For Shipments Under $800</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <app-isf-new></app-isf-new>
+            <button mat-raised-button color='accent'> Details</button>
+        </mat-card-content>
+      </mat-card>
+
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">dns</mat-icon>
+        ISF - Excel 
+      </ng-template>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>New ISF Filings from Excel File</mat-card-title>
+          <mat-card-subtitle>File ISF From Excel Files From Others</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <app-isf-excel></app-isf-excel>
+            <button mat-raised-button color='warn'> Details</button>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group><div class="wrapper">
+   
 </div>

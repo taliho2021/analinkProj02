@@ -22,10 +22,9 @@ export interface AuthResponseData {
 export class AuthService {
 
 
-  constructor(public router: Router) {
+constructor(public router: Router) {
 
-   }
-
+}
 
 get isLoggedIn(): boolean {
   const  user  =  JSON.parse(localStorage.getItem('user')!);

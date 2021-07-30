@@ -15,13 +15,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { IsfNewComponent } from './isf-new/isf-new.component';
+import { IsfExcelComponent } from './isf-excel/isf-excel.component';
 
 @NgModule({
   declarations: [
     IsfComponent,
     IsfHeaderComponent,
     IsfPartiesComponent,
-    IsfHtsComponent
+    IsfHtsComponent,
+    IsfNewComponent,
+    IsfExcelComponent
   ],
   exports: [
     IsfComponent,

@@ -17,7 +17,6 @@ export class NaviComponent implements OnInit {
   private opened: boolean = true;
   private mediaWatcher: Subscription;
   public menu: NavItem[] = menu;
-  menuItems = ['dashboard', 'isf', 'ams', 'cb', 'clients','vendors', 'tables', 'reports', 'accounting', 'apps'];
   
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

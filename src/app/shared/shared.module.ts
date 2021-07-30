@@ -19,6 +19,7 @@ import { NgModule } from '@angular/core';
 import { SharedComponent } from './shared.component';
 import { SharedRoutingModule } from './shared-routing.module';
 import { MenuListItemComponent } from './menu-list-item/menu-list-item.component';
+import { EntrySComponent } from './entry-s/entry-s.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBba-yq4AnlymEhGPVBj98BxSjcyUzVPDY",
@@ -39,7 +40,8 @@ const firebaseConfig = {
     AddressDoComponent,
     AddressFnComponent,
     NaviComponent,
-    MenuListItemComponent
+    MenuListItemComponent,
+    EntrySComponent
   ],
   imports: [
     CommonModule,
