@@ -2,7 +2,7 @@
 <div class="add-lessons-form" [formGroup]="entryForm">
     <ng-container formArrayName="lessons">
         <ng-container *ngFor="let lessonForm of lessons.controls; let i = index">
-            <div class="lesson-form-row" [formGroup]="lessonForm">
+            <div class="lesson-form-row" formGroupName="lessonForm">
                 <mat-form-field appearance="fill">
                     <input matInput
                            formControlName="title"
@@ -21,7 +21,7 @@
             </div>
         </ng-container>
     </ng-container>
-  
+
     <button mat-mini-fab (click)="addLesson()">
         <mat-icon class="add-course-btn">add</mat-icon>
     </button>

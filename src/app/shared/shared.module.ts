@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddressDoComponent } from './address-do/address-do.component';
 import { AddressFnComponent } from './address-fn/address-fn.component';
 import { CommonModule } from '@angular/common';
+import { EntrySComponent } from './entry-s/entry-s.component';
+import { FdaComponent } from './fda/fda.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './log-in/log-in.component';
 import { LogOutComponent } from './log-out/log-out.component';
@@ -14,12 +16,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MenuListItemComponent } from './menu-list-item/menu-list-item.component';
 import { NaviComponent } from './navi/navi.component';
 import { NgModule } from '@angular/core';
 import { SharedComponent } from './shared.component';
 import { SharedRoutingModule } from './shared-routing.module';
-import { MenuListItemComponent } from './menu-list-item/menu-list-item.component';
-import { EntrySComponent } from './entry-s/entry-s.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBba-yq4AnlymEhGPVBj98BxSjcyUzVPDY",
@@ -41,7 +42,8 @@ const firebaseConfig = {
     AddressFnComponent,
     NaviComponent,
     MenuListItemComponent,
-    EntrySComponent
+    EntrySComponent,
+    FdaComponent
   ],
   imports: [
     CommonModule,

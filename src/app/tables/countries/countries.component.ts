@@ -9,17 +9,17 @@ import { CountryService } from 'src/app/services/country.service';
   styleUrls: ['./countries.component.scss']
 })
 export class CountriesComponent implements OnInit {
-  Countries: any =[];
+  countries: any =[];
 
-  constructor(private country: CountryService) { }
+  constructor(private country: CountryService) {
+  }
 
   ngOnInit(): void {
      this.showCountries;
   }
-  
+
   showCountries() {
-    return this.country.getCountries().subscribe((data:{}) =>{
-      this.Countries = data;
-    })
-}
+    return this.country.getCountries()
+    .subscribe((data) => (this.countries = data));
+  }
 }

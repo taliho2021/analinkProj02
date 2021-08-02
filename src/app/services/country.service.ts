@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
@@ -12,7 +12,7 @@ export class CountryService {
   data_URL: string ='assets/data/countries.json'
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getCountries() {
     return this.http.get<Country[]>(this.data_URL)
@@ -22,7 +22,7 @@ export class CountryService {
      )
   }
 
-  handleError(error: { error: { message: string; }; status: any; message: any; } ){
+  private handleError(error: HttpErrorResponse ){
     let errorMessage ='';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;

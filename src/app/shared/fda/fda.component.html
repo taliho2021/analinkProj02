@@ -1,0 +1,56 @@
+<p>fda works!</p>
+
+<div [formGroup]='fdaForm' (ngSubmit)='onSubmit()'>
+  <label for='coNname'>Company Name:</label>
+  <input id='coNname' type='text' formControlName="coName">
+
+  <label for='filer'>Filer:</label>
+  <input id='filer' type='text' formControlName="filer">
+
+
+  <div formGroupName='address'>
+    <h2>Address</h2>
+
+    <label for='street 1'>Street address 1:</label>
+    <input id='street 1' type='text' formControlName="street">
+
+    <label for='city'>City:</label>
+    <input id='city' type='text' formControlName="city">
+
+    <label for='state'>State:</label>
+    <input id='state' type='text' formControlName="state">
+
+    <label for='zip'>Zip Code:</label>
+    <input id='zip' type='text' formControlName="zip">
+
+  </div>
+
+  <div formArrayName='product'>
+    <h1>Products</h1>
+    <button (click) = addProduct()>Add Another Product</button>
+
+    <div *ngFor ='let prod of product.controls; let i = index'>
+      <label for="prod.prodCode-{{ i }}">Product Code:</label>
+      <input id='prod.prodCode-{{ i }}' type="text" [formControlName] ="i">
+
+      <label for="prod.mfrCode-{{ i }}">Mfr Code:</label>
+      <input id='prod.mfrCode-{{ i }}' type="text" [formControlName] ="i">
+
+      <label for="prod.affCode-{{ i }}">Product:</label>
+      <input id='prod.affCode-{{ i }}' type="text" [formControlName] ="i">
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<p>Complete the form to enable button.</p>
+<button type='submit' [disabled]='!fdaForm'>Submit to FDA </button>
+
+<p> {{fdaForm.status}} </p>
+<p> {{fdaForm.value.coName }}</p>
+<p> {{fdaForm.value.filer }}</p>
+<p> {{fdaForm.value.address.city }}</p>
