@@ -36,6 +36,10 @@ export class FdaComponent implements OnInit {
     this.product.push(this.fb.control(''));
   }
 
+  deleteProduct(index:number) {
+    this.product.removeAt(index);
+  }
+
   onSubmit() {
     console.log(this.fdaForm.value);
 
