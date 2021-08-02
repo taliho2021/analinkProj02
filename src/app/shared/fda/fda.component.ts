@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-fda',
   templateUrl: './fda.component.html',
@@ -17,9 +18,16 @@ export class FdaComponent implements OnInit {
         zip: ['']
       }),
       product: this.fb.array([
-        {prodCode: [''],
-         mfrCode: [''],
-         affCode: ['']}
+        {  prodCode: [''],
+           mfrCode: [''],
+           affCode: [''],
+           parties: this.fb.group({
+            seller: [''],
+            buyer: [''],
+            importer: [''] 
+           }),
+           
+         }
       ])
   })
 
@@ -34,6 +42,10 @@ export class FdaComponent implements OnInit {
 
   addProduct() {
     this.product.push(this.fb.control(''));
+  }
+
+  removeProduct(index:number) {
+    this.product.removeAt(index) 
   }
 
   onSubmit() {

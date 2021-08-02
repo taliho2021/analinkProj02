@@ -10,16 +10,15 @@ import { Injectable } from '@angular/core';
 })
 export class CountryService {
   data_URL: string ='assets/data/countries.json'
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
+  // headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
 
   getCountries() {
     return this.http.get<Country[]>(this.data_URL)
      .pipe(
-       retry(2),
        catchError(this.handleError)
-     )
+     );
   }
 
   private handleError(error: HttpErrorResponse ){

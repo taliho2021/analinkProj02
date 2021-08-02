@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Country } from '../../models/country';
-import { CountryService } from 'src/app/services/country.service';
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-countries',
@@ -9,17 +9,17 @@ import { CountryService } from 'src/app/services/country.service';
   styleUrls: ['./countries.component.scss']
 })
 export class CountriesComponent implements OnInit {
-  countries: any =[];
+  countries: Country[] =[];
 
-  constructor(private country: CountryService) {
+  constructor(private co: CountryService) {
   }
 
   ngOnInit(): void {
-     this.showCountries;
+     this.showCountries();
   }
 
   showCountries() {
-    return this.country.getCountries()
-    .subscribe((data) => (this.countries = data));
+    this.co.getCountries()
+    .subscribe(data => this.countries = data, error => console.log(error))
   }
 }
