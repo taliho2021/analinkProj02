@@ -47,7 +47,12 @@ export let menu: NavItem[] = [
                 displayName: 'Countries',
                 iconName: 'add_chart',
                 route: 'tables/countries'
-            }
+            },
+            {
+              displayName: 'States',
+              iconName: 'attach_money',
+              route: 'tables/states'
+          }
         ]
     },
 

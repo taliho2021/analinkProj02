@@ -1,29 +1,45 @@
 <h1>States Table</h1>
 
 <div class="container">
-    <table class="table table-primary">
-        <thead>
+    <table mat-table class="table table-primary" [dataSource] ='dataSource'>
+         <!-- Name Column --> 
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name of State</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <!-- Abbreviation Column -->
+          <ng-container matColumnDef="abbreviation">
+            <th mat-header-cell *matHeaderCellDef> Abbreviation of State</th>
+            <td mat-cell *matCellDef="let element"> {{element.abbreviation}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+   
+</div>
+
+
+        <!-- <thead>
             <tr>
                 <th>Name</th>
                 <th>Abbreviation</th>
             </tr>
-        </thead>
-        <tbody>
+        </thead> -->
+        <!-- <tbody>
             <tr *ngFor="let st of states">
                 <td>{{st.name}} </td>
                 <td>{{st.abbreviation}}</td>
             </tr>
 
         </tbody>
-    </table>
-    <mat-paginator
-      [length] = 'length'
-      [pageSize] = '10'
-      [pageSizeOptions] ='pageSizeOptions'
-      aria-label="Select page"
-      >
 
-    </mat-paginator>
-</div>
+        <mat-paginator
+        [length] = 'length'
+        [pageSize] = '10'
+        [pageSizeOptions] ='pageSizeOptions'
+        aria-label="Select page"
+        >
 
-
+        </mat-paginator> -->

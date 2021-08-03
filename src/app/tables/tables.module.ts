@@ -1,5 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { CdkTableModule } from '@angular/cdk/table';
 import { ClientsModule } from '../clients/clients.module';
 import { CommonModule } from '@angular/common';
 import { CountriesComponent } from './countries/countries.component';
@@ -33,7 +34,8 @@ import { TablesRoutingModule } from './tables-routing.module';
     SharedModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    CdkTableModule
   ],
   exports: [
     TablesComponent,
