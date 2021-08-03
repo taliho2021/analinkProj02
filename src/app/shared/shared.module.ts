@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './log-in/log-in.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
@@ -54,6 +55,7 @@ const firebaseConfig = {
     MatIconModule,
     MatListModule,
     MatMenuModule,
+    MatDividerModule,
     MatToolbarModule,
     FlexLayoutModule,
     FormsModule,

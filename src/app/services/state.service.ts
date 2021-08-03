@@ -11,7 +11,7 @@ import { State } from '../models/state';
 
 export class StateService {
   data_URL: string ='assets/data/states.json'
-  headers = new HttpHeaders().set('Content-Type', 'applicaiton/json' )
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
 

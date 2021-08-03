@@ -1,0 +1,20 @@
+<h1>States Table</h1>
+
+<div class="container">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Abbreviation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let st of states">
+                <td>{{st.name}} </td>
+                <td>{{st.abbreviation}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+

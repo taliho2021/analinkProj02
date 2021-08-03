@@ -11,13 +11,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { StatesComponent } from './states/states.component';
 import { TablesComponent } from './tables.component';
 import { TablesRoutingModule } from './tables-routing.module';
 
 @NgModule({
   declarations: [
     TablesComponent,
-    CountriesComponent
+    CountriesComponent,
+    StatesComponent
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,11 @@ import { TablesRoutingModule } from './tables-routing.module';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule
+  ],
+  exports: [
+    TablesComponent,
+    CountriesComponent,
+    StatesComponent
   ]
 })
 export class TablesModule { }
