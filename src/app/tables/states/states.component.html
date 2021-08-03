@@ -13,8 +13,17 @@
                 <td>{{st.name}} </td>
                 <td>{{st.abbreviation}}</td>
             </tr>
-            
+
         </tbody>
     </table>
+    <mat-paginator
+      [length] = 'length'
+      [pageSize] = '10'
+      [pageSizeOptions] ='pageSizeOptions'
+      aria-label="Select page"
+      >
+
+    </mat-paginator>
 </div>
+
 

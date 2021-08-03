@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-fda',
   templateUrl: './fda.component.html',
@@ -36,10 +37,8 @@ export class FdaComponent implements OnInit {
     this.product.push(this.fb.control(''));
   }
 
-  deleteProduct(index:number) {
+  removeProduct(index:number) {
     this.product.removeAt(index);
-    this.product.removeAt(index) <button (click) = addProduct()>Add Another Product</button>
-    this.product.removeAt(index) <button (click) = addProduct()>Add Another Product</button>
   }
 
   onSubmit() {
