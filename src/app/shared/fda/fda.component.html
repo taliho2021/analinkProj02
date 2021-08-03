@@ -27,12 +27,9 @@
 
   <div formArrayName='product'>
     <h1>Products</h1>
-<<<<<<< HEAD
-=======
 
     <button type="button" class="btn btn-primary" (click) = addProduct()>Add Another Product</button>
 
->>>>>>> b2d6466ac391448a0e61d661e935c9332ff1470d
 
     <div *ngFor ='let prod of product.controls; let i = index'>
       <span># {{i}} :</span>
@@ -44,13 +41,6 @@
 
       <label for="prod.affCode-{{ i }}">Product Affirmation Code:</label>
       <input id='prod.affCode-{{ i }}' type="text" [formControlName] ="i">
-<<<<<<< HEAD
-
-      <button (click) = addProduct()>Add Another Product</button>
-
-      <button (click) = deleteProduct(i)>Delete</button>
-
-=======
 
       <div>
         <h2>Related Parties</h2>
@@ -66,7 +56,6 @@
       </div>
 
       <mat-divider></mat-divider>
->>>>>>> b2d6466ac391448a0e61d661e935c9332ff1470d
     </div>
 
   </div>
