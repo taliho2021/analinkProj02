@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { CountriesComponent } from './countries/countries.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
@@ -26,6 +27,7 @@ import { TablesRoutingModule } from './tables-routing.module';
     CommonModule,
     TablesRoutingModule,
     MatCardModule,
+    MatInputModule,
     MatIconModule,
     MatTabsModule,
     ClientsModule,
