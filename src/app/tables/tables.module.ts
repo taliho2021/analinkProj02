@@ -18,13 +18,15 @@ import { SharedModule } from '../shared/shared.module';
 import { StatesComponent } from './states/states.component';
 import { TablesComponent } from './tables.component';
 import { TablesRoutingModule } from './tables-routing.module';
+import { ClientDetailComponent } from './client-detail/client-detail.component';
 
 @NgModule({
   declarations: [
     TablesComponent,
     CountriesComponent,
     StatesComponent,
-    ClientsComponent
+    ClientsComponent,
+    ClientDetailComponent
   ],
   imports: [
     CommonModule,

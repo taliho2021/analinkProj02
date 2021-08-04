@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 
@@ -31,7 +32,9 @@ export class ClientsComponent implements OnInit {
   @ViewChild(MatSort)  sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private customerService: CustomersService) {
+  constructor(private customerService: CustomersService,
+              private router: Router,
+              private route: ActivatedRoute) {
     this.dataSource = new MatTableDataSource<Customer>();
    }
 
@@ -52,6 +55,7 @@ export class ClientsComponent implements OnInit {
 
   onRowClicked(row: any){
     console.log('Row clicked: ', row);
+    this.router.navigate([row.id], {relativeTo:this.route})
   }
 
   applyFilter(event: Event){

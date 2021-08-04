@@ -9,6 +9,7 @@ import { Customer } from '../models/customer';
   providedIn: 'root'
 })
 export class CustomersService {
+  customers: Customer[] =[]
   data_URL: string ='assets/data/customers.json'
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
@@ -17,8 +18,16 @@ export class CustomersService {
   getCustomers() {
     return this.http.get<Customer[]>(this.data_URL)
       .pipe(
-        catchError(this.handleError)
+        catchError(this.handleError),
       );
+  }
+
+  getCustomer(i: number) {
+    return this.http.get<Customer[]>(this.data_URL)
+      .pipe(
+        map(data => data.find(data => data.id)),
+        catchError(this.handleError),
+      )
   }
 
   private handleError(error: HttpErrorResponse) {
