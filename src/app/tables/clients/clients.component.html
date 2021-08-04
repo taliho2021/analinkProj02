@@ -5,8 +5,16 @@
   <mat-label>Filter</mat-label>
   <input matInput (keyup) = 'applyFilter($event)' placeholder="Ex. Mia" #input>
 </mat-form-field>
+
+
 <div class="container">
-  <mat-table class="mat-elevation-z8" [dataSource] ='dataSource' matSort>
+  <mat-table  class="mat-elevation-z8"
+              [dataSource] ='dataSource'
+              matSort
+              cdkDropList
+              cdkDropListOrientation="horizontal"
+              (cdkDropListDropped)="drop($event)">
+
        <!-- ID Column -->
       <ng-container matColumnDef="id">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Customer ID</mat-header-cell>

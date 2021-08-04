@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 
 import { Customer } from '../../models/customer';
@@ -22,6 +23,10 @@ export class ClientsComponent implements OnInit {
           'balance'
 ]
   dataSource: MatTableDataSource<Customer>
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.displayedColumns, event.previousIndex, event.currentIndex);
+  }
 
   @ViewChild(MatSort)  sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;

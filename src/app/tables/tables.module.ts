@@ -1,9 +1,11 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CdkTableModule } from '@angular/cdk/table';
+import { ClientsComponent } from './clients/clients.component';
 import { ClientsModule } from '../clients/clients.module';
 import { CommonModule } from '@angular/common';
 import { CountriesComponent } from './countries/countries.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -16,7 +18,6 @@ import { SharedModule } from '../shared/shared.module';
 import { StatesComponent } from './states/states.component';
 import { TablesComponent } from './tables.component';
 import { TablesRoutingModule } from './tables-routing.module';
-import { ClientsComponent } from './clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ClientsComponent } from './clients/clients.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    CdkTableModule
+    CdkTableModule,
+    DragDropModule
   ],
   exports: [
     TablesComponent,
