@@ -28,7 +28,9 @@ export let menu: NavItem[] = [
                 displayName: 'Customers Info',
                 iconName: 'attach_money',
                 route: 'clients/customers'
-            }
+            },
+
+
         ]
     },
 
@@ -48,11 +50,20 @@ export let menu: NavItem[] = [
                 iconName: 'add_chart',
                 route: 'tables/countries'
             },
+
             {
               displayName: 'States',
               iconName: 'attach_money',
               route: 'tables/states'
-          }
+            },
+
+            {
+              displayName: 'Clients',
+              iconName: 'person',
+              route: 'tables/clients'
+            },
+
+
         ]
     },
 

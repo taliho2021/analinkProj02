@@ -41,7 +41,7 @@ export class StatesComponent implements OnInit {
 
   onRowClicked(row: any){
     console.log('Row clicked: ', row);
-
   }
+
  }
 
