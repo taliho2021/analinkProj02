@@ -9,7 +9,7 @@
       <mat-card-content>
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Client ID" formControlName="clientId">
             </mat-form-field>
           </div>
@@ -17,7 +17,7 @@
 
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Company name" formControlName="name">
               <mat-error *ngIf="importerForm.controls['name'].hasError('required')">
                 Company name is <strong>required</strong>
@@ -28,7 +28,7 @@
         
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Address Line 1" formControlName="address1">
               <mat-error *ngIf="importerForm.controls['address1'].hasError('required')">
                 Address Line 1 is <strong>required</strong>
@@ -47,7 +47,7 @@
 
         <div class="row" *ngIf="hasUnitNumber">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
             </mat-form-field>
           </div>
@@ -55,7 +55,7 @@
 
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="City" formControlName="city">
               <mat-error *ngIf="importerForm.controls['city'].hasError('required')">
                 City is <strong>required</strong>
@@ -63,7 +63,7 @@
             </mat-form-field>
           </div>
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <mat-select placeholder="State" formControlName="state">
                 <mat-option *ngFor="let state of states" [value]="state.abbreviation">
                   {{ state.name }}
@@ -78,14 +78,14 @@
 
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput #postalCode maxlength="5" placeholder="Postal Code" type="number" formControlName="postalCode">
               <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
             </mat-form-field>
           </div>
 
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Country Name" type="text" formControlName="country">
             </mat-form-field>
           </div>
@@ -94,19 +94,19 @@
 
         <div class="row">
             <div class="col">
-              <mat-form-field class="full-width">
+              <mat-form-field class="full-width" appearance='fill'>
                 <input matInput placeholder="Telephone #" type="number" formControlName="phone1">
               </mat-form-field>
             </div>
   
             <div class="col">
-              <mat-form-field class="full-width">
+              <mat-form-field class="full-width" appearance='fill'>
                 <input matInput placeholder="EMail" type="email" formControlName="email">
               </mat-form-field>
             </div>
 
             <div class="col">
-                <mat-form-field class="full-width">
+                <mat-form-field class="full-width" appearance='fill'>
                   <input matInput placeholder="Website" type="text" formControlName="website">
                 </mat-form-field>
             </div>
@@ -124,7 +124,7 @@
       <mat-card-content>
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Client ID" formControlName="clientId">
             </mat-form-field>
           </div>
@@ -132,7 +132,7 @@
 
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Company name" formControlName="name">
               <mat-error *ngIf="importerForm.controls['name'].hasError('required')">
                 Company name is <strong>required</strong>
@@ -143,7 +143,7 @@
         
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Address Line 1" formControlName="address1">
               <mat-error *ngIf="importerForm.controls['address1'].hasError('required')">
                 Address Line 1 is <strong>required</strong>
@@ -162,7 +162,7 @@
 
         <div class="row" *ngIf="hasUnitNumber">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
             </mat-form-field>
           </div>
@@ -170,7 +170,7 @@
 
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="City" formControlName="city">
               <mat-error *ngIf="importerForm.controls['city'].hasError('required')">
                 City is <strong>required</strong>
@@ -178,7 +178,7 @@
             </mat-form-field>
           </div>
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <mat-select placeholder="State" formControlName="state">
                 <mat-option *ngFor="let state of states" [value]="state.abbreviation">
                   {{ state.name }}
@@ -193,14 +193,14 @@
 
         <div class="row">
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput #postalCode maxlength="5" placeholder="Postal Code" type="number" formControlName="postalCode">
               <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
             </mat-form-field>
           </div>
 
           <div class="col">
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" appearance='fill'>
               <input matInput placeholder="Country Name" type="text" formControlName="country">
             </mat-form-field>
           </div>
@@ -209,19 +209,19 @@
 
         <div class="row">
             <div class="col">
-              <mat-form-field class="full-width">
+              <mat-form-field class="full-width" appearance='fill'>
                 <input matInput placeholder="Telephone #" type="number" formControlName="phone1">
               </mat-form-field>
             </div>
   
             <div class="col">
-              <mat-form-field class="full-width">
+              <mat-form-field class="full-width" appearance='fill'>
                 <input matInput placeholder="EMail" type="email" formControlName="email">
               </mat-form-field>
             </div>
 
             <div class="col">
-                <mat-form-field class="full-width">
+                <mat-form-field class="full-width" appearance='fill'>
                   <input matInput placeholder="Website" type="text" formControlName="website">
                 </mat-form-field>
             </div>
@@ -230,6 +230,122 @@
       
       </mat-card-content>
     </mat-card>
+    
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Other Information</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <input matInput placeholder="Client ID" formControlName="clientId">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <input matInput placeholder="Company name" formControlName="name">
+              <mat-error *ngIf="importerForm.controls['name'].hasError('required')">
+                Company name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <input matInput placeholder="Address Line 1" formControlName="address1">
+              <mat-error *ngIf="importerForm.controls['address1'].hasError('required')">
+                Address Line 1 is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        
+        <div class="row" *ngIf="!hasUnitNumber">
+          <div class="col">
+            <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
+              + Add C/O, Apt, Suite, Unit
+            </button>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="hasUnitNumber">
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <input matInput placeholder="City" formControlName="city">
+              <mat-error *ngIf="importerForm.controls['city'].hasError('required')">
+                City is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <mat-select placeholder="State" formControlName="state">
+                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                  {{ state.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="importerForm.controls['state'].hasError('required')">
+                State is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <input matInput #postalCode maxlength="5" placeholder="Postal Code" type="number" formControlName="postalCode">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field class="full-width" appearance='fill'>
+              <input matInput placeholder="Country Name" type="text" formControlName="country">
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width" appearance='fill'>
+                <input matInput placeholder="Telephone #" type="number" formControlName="phone1">
+              </mat-form-field>
+            </div>
+  
+            <div class="col">
+              <mat-form-field class="full-width" appearance='fill'>
+                <input matInput placeholder="EMail" type="email" formControlName="email">
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field class="full-width" appearance='fill'>
+                  <input matInput placeholder="Website" type="text" formControlName="website">
+                </mat-form-field>
+            </div>
+  
+          </div>
+      
+      </mat-card-content>
+    </mat-card>
+
    </div>
   </form>
   
