@@ -25,8 +25,8 @@ export class MenuListItemComponent implements OnInit {
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
   @Input() item!: NavItem;
   @Input()  depth!: number;
-  
-  constructor(public navService: NavService, public router: Router) { 
+
+  constructor(public navService: NavService, public router: Router) {
       if (this.depth === undefined) {
         this.depth = 0;
       }
@@ -48,6 +48,7 @@ export class MenuListItemComponent implements OnInit {
 
     if (item.children && item.children.length) {
       this.expanded = !this.expanded;
+      this.router.navigate([item.route])
     }
   }
 
