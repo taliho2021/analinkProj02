@@ -1,6 +1,8 @@
 import { CbComponent } from './cb.component';
 import { CbRoutingModule } from './cb-routing.module';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -17,6 +19,8 @@ import { VarChartsModule } from '../var-charts/var-charts.module';
     MatCardModule,
     MatIconModule,
     MatTabsModule,
+    MatButtonModule,
+    FlexLayoutModule,
     VarChartsModule
   ]
 })

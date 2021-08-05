@@ -2,6 +2,7 @@ import { ClientsComponent } from './clients.component';
 import { ClientsRoutingModule } from './clients-routing.module';
 import { CommonModule } from '@angular/common';
 import { CustomersComponent } from './customers/customers.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ImportersComponent } from './importers/importers.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -35,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatSortModule,
     MatTableModule,
+    FlexLayoutModule,
     ClientsRoutingModule
   ],
   exports: [
