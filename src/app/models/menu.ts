@@ -63,6 +63,12 @@ export let menu: NavItem[] = [
               route: 'tables/clients'
             },
 
+            {
+              displayName: 'Importers',
+              iconName: 'attach_money',
+              route: 'tables/importer'
+            }
+
 
         ]
     },

@@ -10,14 +10,23 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ImportersService {
+  importers: Importer[]=[]
   API_URL: string ='http://localhost:3000';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   redirectUrl:string =''
 
   constructor(private http: HttpClient,public router: Router) { }
 
-  getImporters(importer: Importer):Observable<any>{
-    return this.http.get(`${this.API_URL}/importers`).pipe(
+  getImporters():Observable<Importer[]>  {
+    return this.http.get<Importer[]>(`${this.API_URL}/importers`)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  addImporter(importer:Importer){
+    return this.http.post<Importer>(`${this.API_URL}/importers`, importer)
+    .pipe(
       catchError(this.handleError)
     )
   }
@@ -35,6 +44,4 @@ export class ImportersService {
   }
 
 
-
-  addImporter(){}
 }

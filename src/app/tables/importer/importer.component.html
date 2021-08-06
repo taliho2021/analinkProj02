@@ -1,0 +1,26 @@
+<h1>Importer List</h1>
+
+<div class="container">
+    <table class="table table-primary" >
+      <thead>
+        <tr>
+          <th>Client Id</th>
+          <th>Name of Client</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Tel #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cl of importers">
+          <td> {{ cl.clientId }}</td>
+          <td> {{ cl.name}}</td>
+          <td> {{ cl.city }}</td>
+          <th> {{ cl.state }}</th>
+          <th> {{ cl.phone1 }} </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button (onclick)='addImporter(importer)'>Add New Importer</button>

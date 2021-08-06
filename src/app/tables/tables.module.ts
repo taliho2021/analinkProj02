@@ -19,6 +19,7 @@ import { StatesComponent } from './states/states.component';
 import { TablesComponent } from './tables.component';
 import { TablesRoutingModule } from './tables-routing.module';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
+import { ImporterComponent } from './importer/importer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ClientDetailComponent } from './client-detail/client-detail.component';
     CountriesComponent,
     StatesComponent,
     ClientsComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    ImporterComponent
   ],
   imports: [
     CommonModule,
