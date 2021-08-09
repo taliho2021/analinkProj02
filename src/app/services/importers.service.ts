@@ -6,29 +6,50 @@ import { Importer } from '../models/importer';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
+const API_URL ='http://localhost:3000/importers';
 @Injectable({
   providedIn: 'root'
 })
 export class ImportersService {
   importers: Importer[]=[]
-  API_URL: string ='http://localhost:3000';
+
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   redirectUrl:string =''
 
   constructor(private http: HttpClient,public router: Router) { }
 
-  getImporters():Observable<Importer[]>  {
-    return this.http.get<Importer[]>(`${this.API_URL}/importers`)
+  getAll():Observable<Importer[]>  {
+    return this.http.get<Importer[]>(API_URL)
     .pipe(
       catchError(this.handleError)
     )
   }
 
-  addImporter(importer:Importer){
-    return this.http.post<Importer>(`${this.API_URL}/importers`, importer)
+  get(clientId: any): Observable<Importer> {
+    return this.http.get<Importer>(`${API_URL}/${clientId}`)
+  }
+
+  create(userData: Importer){
+    return this.http.post(API_URL, userData)
     .pipe(
       catchError(this.handleError)
     )
+  }
+
+  update(clientId: any, importer:Importer): Observable<Importer>{
+    return this.http.put<Importer>(`${API_URL}/${clientId}`, importer)
+  }
+
+  delete(clientId:any): Observable<Importer>{
+    return this.http.delete<Importer>(API_URL)
+  }
+
+  deleteAll(): Observable<Importer> {
+    return this.http.delete<Importer>(API_URL)
+  }
+
+  findByName(name:any) : Observable<Importer[]>{
+    return this.http.get<Importer[]>(`${API_URL}?name=${name}`)
   }
 
   handleError(error: HttpErrorResponse) {

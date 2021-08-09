@@ -9,7 +9,7 @@ import { ImportersService } from 'src/app/services/importers.service';
   styleUrls: ['./importers.component.scss']
 })
 export class ImportersComponent implements OnInit {
-  
+
   importerForm = this.fb.group({
     clientId: null,
     name:  [null, Validators.required],
@@ -96,7 +96,7 @@ export class ImportersComponent implements OnInit {
   ];
 
   onSubmit(): void {
-    this.importerService.getImporters;
+    this.importerService.getAll;
     alert('Thanks!');
   }
 

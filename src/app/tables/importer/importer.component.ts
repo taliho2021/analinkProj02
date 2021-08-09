@@ -14,20 +14,22 @@ export class ImporterComponent implements OnInit {
   importers: Importer[] = []
 
   importerForm = this.fb.group({
-    clientId: null,
-    name:  [null, Validators.required],
-    address1: [null, Validators.required],
-    address2: [null, Validators.required],
-    city: [null, Validators.required],
-    state: [null, Validators.required],
+    clientId: [''],
+    name:  ['', Validators.required],
+    address1: ['', Validators.required],
+    address2: ['', Validators.required],
+    city: ['', Validators.required],
+    state: ['', Validators.required],
     postalCode: [null, Validators.compose([
       Validators.required, Validators.minLength(5), Validators.maxLength(5)])
     ],
-    country: [null, Validators.required],
+    country: ['', Validators.required],
     phone1:  [null, Validators.required],
-    email:  [null, Validators.required],
-    website: [null, Validators.required]
+    email:  ['', Validators.required],
+    website: ['', Validators.required]
   });
+
+  submitted = false
 
   constructor(private imp: ImportersService,
               private fb: FormBuilder) { }
@@ -37,15 +39,34 @@ export class ImporterComponent implements OnInit {
   }
 
   showImporters() {
-    this.imp.getImporters()
+    this.imp.getAll()
       .subscribe(data => (this.importers = data))
     console.log('this.importers');
-    
+
   }
 
   addImporter(importer:Importer) {
-    this.imp.addImporter(this.importer)
-    .subscribe(importer => this.importers.push(importer)) 
-
+     this.imp.create(this.importerForm.value)
+       .subscribe(importers => {
+         this.importers.push(importer)
+         this.submitted=true})
   }
+
+    newImporter(): void {
+      this.submitted = true;
+      this.importer ={
+        clientId:'',
+        name:'',
+        address1: '',
+        address2: '',
+        city: '',
+        state: '',
+        country:'',
+        phone1:0,
+        phone2: 0,
+        email1: '',
+        website:''
+
+      }
+    }
 }
