@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { AddressDoComponent } from './address-do/address-do.component';
 import { AddressFnComponent } from './address-fn/address-fn.component';
 import { EntrySComponent } from './entry-s/entry-s.component';
 import { FdaComponent } from './fda/fda.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LogInComponent},
   { path: 'navi', component: NaviComponent},
   { path: 'address-fn', component: AddressFnComponent},
+  { path: 'address-do', component: AddressDoComponent},
   { path: 'entry', component: EntrySComponent },
   { path: 'fda', component: FdaComponent} ];
 

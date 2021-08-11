@@ -29,64 +29,91 @@
   </div>
 
   <div>
-      <mat-card class='example-card' *ngIf='submitted'>
-        <mat-card-title>Importer Registration</mat-card-title>
+
 
         <form [formGroup]='importerForm'
           (ngSubmit)='addImporter(importerForm.value)' >
 
-          <label for="clientId">Client ID</label>
-          <input type="text" class='form-control' formControlName='clientId' required
-          name='clientId'>
+          <mat-card class='example-card' *ngIf='submitted'>
+            <mat-card-title>Importer Registration</mat-card-title>
 
-          <label for="name">Client Name</label>
-          <input type="text" class='form-control' formControlName='name' required
-          name='name'>
+          <mat-card-content>
+            <div class='row'>
+              <div class='col'>
+                <mat-form-field>
+                  <label for="clientId">Client ID</label>
+                  <input type="text" class='form-control' formControlName='clientId' required
+                  name='clientId'>
+                </mat-form-field>
 
-          <label for="address1">Address Line 1</label>
-          <input type="text" class='form-control' formControlName='address1' required
-          name='address1'>
+              </div>
 
-          <label for="address2">Address Line 2 </label>
-          <input type="text" class='form-control' formControlName='address2' required
-          name='address2'>
+              <div class='col'>
+                <mat-form-field>
+                  <label for="name">Client Name</label>
+                  <input type="text" class='form-control' formControlName='name' required
+                   name='name'>
+                </mat-form-field>
 
-          <div clasa='row align-items-start'>
-            <label for="city">City</label>
-            <input type="text" class='form-control col' formControlName='city' required
-            name='city'>
-
-            <label for="state">State</label>
-            <input type="text" class='form-control col' formControlName='state' required
-            name='state'>
-
-            <label for="postalCode">Postal Code</label>
-            <input type="text" class='form-control col' formControlName='postalCode' required
-            name='postalCode'>
-          </div>
+              </div>
+            </div>
 
 
-          <label for="country">Country</label>
-          <input type="text" class='form-control' formControlName='country' required
-          name='country'>
+            <label for="address1">Address Line 1</label>
+            <input type="text" class='form-control' formControlName='address1' required
+            name='address1'>
 
-          <label for="phone1">Phone Number</label>
-          <input type="text" class='form-control' formControlName='phone1' required
-          name='phone1'>
+            <label for="address2">Address Line 2 </label>
+            <input type="text" class='form-control' formControlName='address2' required
+            name='address2'>
 
-          <label for="email">Email</label>
-          <input type="text" class='form-control' formControlName='email' required
-          name='email'>
+            <div class='row align-items-start'>
+              <div class='col'>
+                <label for="city">City</label>
+                <input type="text" class='form-control col' formControlName='city' required
+                name='city'>
+              </div>
 
-          <label for="website">Website</label>
-          <input type="text" class='form-control' formControlName='website' required
-          name='website'>
+              <div class='col'>
+                <label for="state">State</label>
+                <input type="text" class='form-control col' formControlName='state' required
+                name='state'>
+              </div>
 
-          <button class='btn btn-primary' [disabled]='!importerForm.valid' type='submit'>Add New Importer</button>
+              <div class='col'>
+
+                <label for="postalCode">Postal Code</label>
+                <input type="text" class='form-control col' formControlName='postalCode' required
+                name='postalCode'>
+              </div>
+            </div>
+
+
+            <label for="country">Country</label>
+            <input type="text" class='form-control' formControlName='country' required
+            name='country'>
+
+            <label for="phone1">Phone Number</label>
+            <input type="tel" class='form-control' formControlName='phone1' required
+            name='phone1'>
+
+            <label for="email">Email</label>
+            <input type="email" class='form-control' formControlName='email' required
+            name='email'>
+
+            <label for="website">Website</label>
+            <input type="url" class='form-control' formControlName='website' required
+            name='website'>
+
+            <button class='btn btn-primary' [disabled]='!importerForm.valid' type='submit'>Add New Importer</button>
+
+          </mat-card-content>
+
+        </mat-card>
 
         </form>
         {{ importerForm.value | json}}
-      </mat-card>
+
 
       <div *ngIf='!submitted'>
         <button class='btn btn-success' (click)='newImporter()'>Add New</button>
