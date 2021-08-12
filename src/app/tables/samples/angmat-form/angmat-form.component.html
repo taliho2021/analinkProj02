@@ -1,0 +1,45 @@
+<h1>Angular Material Form with Nested Formgroup and Formarray</h1>
+
+<form  [formGroup] ='importerForm'  (ngSubmit)="onSubmit()">
+    <div formArrayName ='importers'>
+        <div *ngFor =' let imp of importers().controls; let impIndex=index'>
+            <div [formGroupName]="impIndex"
+                style='border: 1px solid blue; padding: 10px; width:600px; margin:5px'> 
+                
+                <label for="name"> {{ impIndex }} Company Name :</label>
+                <input type="text" formControlName='name'>
+
+                <label for='address1'>  Address 1: </label>
+                <input type="text" formControlName='address1'>
+
+                <label for="address2"> Address 2:</label>
+                <input type="text" formControlName='address2'>
+
+                <label for='city'>  City </label>
+                <input type="text" formControlName='city'>
+
+                <label for="state"> State</label>
+                <input type="text" formControlName='state'>
+
+                <label for='postalCode'> Postal Code: </label>
+                <input type="text" formControlName='postalCode'>
+
+                <label for="country"> Country :</label>
+                <input type="text" formControlName='country'>
+
+                <label for='phone1'> Phone 1: </label>
+                <input type="text" formControlName='phone1'>
+
+                <label for="email"> Email :</label>
+                <input type="email" formControlName='email'>
+
+                <label for='website'> Website </label>
+                <input type="url" formControlName='website'>
+            </div>
+
+        </div>
+      <button type='button' (click)='addImporter()'>Add Importer </button>
+    </div>
+</form>
+
+{{ this.importerForm.value | json}}

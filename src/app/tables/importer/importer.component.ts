@@ -49,11 +49,12 @@ export class ImporterComponent implements OnInit {
      this.imp.create(this.importerForm.value)
        .subscribe(importers => {
          this.importers.push(importer)
-         this.submitted=true})
+         this.submitted=true
+         this.newImporter()})
   }
 
     newImporter(): void {
-      this.submitted = true;
+      this.submitted=true
       this.importer ={
         clientId:'',
         name:'',

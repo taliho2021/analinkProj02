@@ -14,7 +14,8 @@ const routes: Routes = [
   {  path: 'states', component: StatesComponent},
   {  path: 'clients', component: ClientsComponent},
   {  path: 'clients/:id', component: ClientDetailComponent},
-  {  path: 'importer', component: ImporterComponent}
+  {  path: 'importer', component: ImporterComponent},
+  {  path: 'samples', loadChildren: () => import('./samples/samples.module').then(m => m.SamplesModule) }
 ];
 
 @NgModule({
