@@ -35,11 +35,45 @@
 
                 <label for='website'> Website </label>
                 <input type="url" formControlName='website'>
+
+                <div formGroupName='htsGroup'>
+                    <h2>HTS Information</h2>
+                        <label for='htsNo'> HTS #: </label>
+                        <input type="text" formControlName='htsNo'>
+            
+                        <label for="description"> Description</label>
+                        <input type="text" formControlName='description'>
+            
+                        <label for='spi'> SPI </label>
+                        <input type="text" formControlName='spi'>
+
+                        
+                        <div formArrayName='pga'>
+                            <h2>PGA Information</h2>
+                                <label for='pgaName'> PGA Agency: </label>
+                                <input type="text" formControlName='pgaName'>
+                    
+                                <label for="pgaCode"> PGA Code</label>
+                                <input type="text" formControlName='pgaCode'>
+                    
+                                <label for='pgaMfr'> Manufacturer </label>
+                                <input type="text" formControlName='pgaMfr'>
+        
+                                <label for='pgaImp'> Importer </label>
+                                <input type="text" formControlName='pgaImp'>
+                        </div>
+
+                </div>
+
+
             </div>
 
         </div>
-      <button type='button' (click)='addImporter()'>Add Importer </button>
+     
     </div>
+    
+
+    <button type='button' (click)='addImporter()'>Add Importer </button>
 </form>
 
 {{ this.importerForm.value | json}}

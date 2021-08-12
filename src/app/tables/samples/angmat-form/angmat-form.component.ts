@@ -93,9 +93,8 @@ export class AngmatFormComponent implements OnInit {
     this.importers().removeAt(impIndex)
   }
 
-     onSubmit() {
+  onSubmit() {
     console.log(this.importerForm.value);
-    
    }
   
 }
