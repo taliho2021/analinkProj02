@@ -67,6 +67,12 @@ export let menu: NavItem[] = [
               displayName: 'Importers',
               iconName: 'attach_money',
               route: 'tables/importer'
+            },
+
+            {
+              displayName: 'Sample Forms',
+              iconName: 'dashboard',
+              route: 'tables/samples'
             }
 
 

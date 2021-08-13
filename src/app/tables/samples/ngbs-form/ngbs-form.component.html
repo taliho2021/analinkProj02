@@ -1,1 +1,84 @@
-<h1>ngbs-form works!</h1>
+<h1 style='text-align: center; color:slategray'> Form Using NG Bootstrap</h1>
+
+<form  [formGroup] ='importerForm'  (ngSubmit)="onSubmit()" class='angForm'>
+    <div formArrayName ='importers'>
+        <div *ngFor =' let imp of importers().controls; let impIndex=index'>
+            <div [formGroupName]="impIndex"
+                style='border: 1px solid blue; padding: 10px; width:800px; margin:5px'>
+                
+                <label for="name">Company Name:</label>
+                <input type="text" formControlName='name'>
+
+                <label for='address1'>  Address 1: </label>
+                <input type="text" formControlName='address1'>
+
+                <label for="address2"> Address 2:</label>
+                <input type="text" formControlName='address2'> -->
+
+                <label for='city'>  City </label>
+                <input type="text" formControlName='city'>
+
+                <label for="state"> State</label>
+                <input type="text" formControlName='state'>
+
+                <label for='postalCode'> Postal Code: </label>
+                <input type="text" formControlName='postalCode'>
+
+                <label for="country"> Country :</label>
+                <input type="text" formControlName='country'>
+
+                <label for='phone1'> Phone 1: </label>
+                <input type="text" formControlName='phone1'>
+
+                <label for="email"> Email :</label>
+                <input type="email" formControlName='email'>
+
+                <label for='website'> Website </label>
+                <input type="url" formControlName='website'>
+
+                <div formGroupName='htsGroup'>
+                    <h2>HTS Information</h2>
+                        <label for='htsNo'> HTS #: </label>
+                        <input type="text" formControlName='htsNo'>
+
+                        <label for="description"> Description</label>
+                        <input type="text" formControlName='description'>
+
+                        <label for='spi'> SPI </label>
+                        <input type="text" formControlName='spi'>
+
+                </div>
+
+
+                <div formArrayName='pgas'>
+                  <h2>PGA Information</h2>
+                  <div *ngFor='let pga of importerPga(impIndex).controls; let pgaIndex=index'>
+                    <div [formGroupName]="pgaIndex">
+                        <label for='pgaName'> {{pgaIndex}} PGA Agency: </label>
+                        <input type="text" formControlName='pgaName'>
+
+                        <label for="pgaCode"> PGA Code</label>
+                        <input type="text" formControlName='pgaCode'>
+
+                        <label for='pgaMfr'> Manufacturer </label>
+                        <input type="text" formControlName='pgaMfr'>
+
+                        <label for='pgaImp'> Importer </label>
+                        <input type="text" formControlName='pgaImp'>
+
+                        <button (click)='removeImporterPga(impIndex, pgaIndex)'>Remove PGA</button>
+                    </div>
+                  </div>
+                    <button type='button' (click)='addImporterPga(impIndex)'>Add PGA</button>
+              </div>
+
+
+            </div>
+            <button type='button' (click)='removeImporter(impIndex)'>Delete Importer </button>
+        </div>
+    </div>
+    <button type='button' (click)='addImporter()'>Add Importer </button>
+
+</form>
+
+{{ this.importerForm.value | json}}

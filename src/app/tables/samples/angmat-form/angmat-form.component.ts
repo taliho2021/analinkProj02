@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { ThemeService } from 'ng2-charts';
-
 @Component({
   selector: 'app-angmat-form',
   templateUrl: './angmat-form.component.html',
