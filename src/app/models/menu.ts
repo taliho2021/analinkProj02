@@ -72,7 +72,18 @@ export let menu: NavItem[] = [
             {
               displayName: 'Sample Forms',
               iconName: 'dashboard',
-              route: 'tables/samples'
+              route: 'tables/samples',
+              children: [{
+                displayName: 'Angular Material Form',
+                iconName: 'attach_money',
+                route: 'tables/samples/ang'
+              },
+
+              {
+                displayName: ' Ng Bootstrap Form',
+                iconName: 'assignment',
+                route: 'tables/samples/ng'
+              }]
             }
 
 

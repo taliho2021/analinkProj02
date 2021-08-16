@@ -20,9 +20,6 @@ export class ImporterComponent implements OnInit {
     address2: ['', Validators.required],
     city: ['', Validators.required],
     state: ['', Validators.required],
-    postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-    ],
     country: ['', Validators.required],
     phone1:  [null, Validators.required],
     email:  ['', Validators.required],
@@ -41,8 +38,16 @@ export class ImporterComponent implements OnInit {
   showImporters() {
     this.imp.getAll()
       .subscribe(data => (this.importers = data))
-    console.log('this.importers');
 
+  }
+
+  // getImporter(clientId:'') {
+  //   this.imp.get(this.clientId)
+  //     .subscribe(data => (this.importer = data))
+  // }
+
+  getImporter(){
+    // Logic goes here
   }
 
   addImporter(importer:Importer) {

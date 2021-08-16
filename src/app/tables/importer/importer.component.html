@@ -20,7 +20,7 @@
           <th> {{ cl.state }}</th>
           <th> {{ cl.phone1 }} </th>
           <th class='d-grid gap-2 d-md-block'>
-             <button class='btn btn-primary' type="button"> EDIT</button>
+             <button class='btn btn-primary' type="button" (click)='getImporter()'> EDIT</button>
              <button class='btn btn-warning' type="button">DELETE</button>
           </th>
         </tr>
@@ -42,7 +42,7 @@
               <div class='col'>
                 <mat-form-field >
                   <mat-label>Client ID</mat-label>
-                  <input type="text" matInput required   class='form-control'>
+                  <input type="text" matInput required   formControlName='clientId'>
                 </mat-form-field>
 
               </div>
@@ -50,7 +50,7 @@
               <div class='col'>
                 <mat-form-field>
                   <label for="name">Client Name</label>
-                  <input type="text" class='form-control' formControlName='name' required
+                  <input matInput type="text" matInput formControlName='name' required
                    name='name'>
                 </mat-form-field>
 
@@ -79,12 +79,6 @@
                 name='state'>
               </div>
 
-              <div class='col'>
-
-                <label for="postalCode">Postal Code</label>
-                <input type="text" class='form-control col' formControlName='postalCode' required
-                name='postalCode'>
-              </div>
             </div>
 
 

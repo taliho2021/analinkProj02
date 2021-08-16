@@ -1,11 +1,109 @@
 <h1 style='text-align: center; color:slategray'> Form Using NG Bootstrap</h1>
 
+<form  [formGroup] ='importerForm' (ngSubmit)='onSubmit()'>
+
+<div class="row">Row 1
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row"><span style="font-weight: 600">Dates</span>
+   <div class="col">
+    <label for="eDate">Export</label>
+    <input type="date">
+  </div>
+  <div class="col">
+    <label for="lDate">Loading</label>
+    <input type="date">
+  </div>
+  <div class="col">
+    <label for="iDate">Import</label>
+    <input type="date">
+  </div>
+  <div class="col">
+    <label for="uDate">Unloading</label>
+    <input type="date">
+  </div>
+  <div class="col">
+    <label for="rDate">Ready</label>
+    <input type="date">
+  </div>
+  <div class="col">
+    <label for="dDate">Delivery</label>
+    <input type="date">
+  </div>
+</div>
+
+<div class="row">Row 3
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 4
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 5
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 6
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 7
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 8
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 9
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 10
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 11
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 12
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 13
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<div class="row">Row 14
+  <div class="col">col 1</div>
+  <div class="col">col 2</div>
+  <div class="col">col 3</div>
+</div>
+<button type='button' (click)='addImporter()'>Add Importer </button>
+</form>
+
+
 <form  [formGroup] ='importerForm'  (ngSubmit)="onSubmit()" class='angForm'>
     <div formArrayName ='importers'>
         <div *ngFor =' let imp of importers().controls; let impIndex=index'>
             <div [formGroupName]="impIndex"
                 style='border: 1px solid blue; padding: 10px; width:800px; margin:5px'>
-                
+
                 <label for="name">Company Name:</label>
                 <input type="text" formControlName='name'>
 

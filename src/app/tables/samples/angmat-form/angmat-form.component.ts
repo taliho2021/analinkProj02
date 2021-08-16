@@ -10,6 +10,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AngmatFormComponent implements OnInit {
 
   importerForm!: FormGroup;
+  notSubmitted='false';
 
   constructor(private fb: FormBuilder) { }
 

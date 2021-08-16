@@ -25,12 +25,12 @@ export class ImportersService {
     )
   }
 
-  get(clientId: any): Observable<Importer> {
+  getImporter(clientId: any): Observable<Importer> {
     return this.http.get<Importer>(`${API_URL}/${clientId}`)
   }
 
   create(userData: Importer){
-    return this.http.post(API_URL, userData)
+    return this.http.post<Importer>(API_URL, userData)
     .pipe(
       catchError(this.handleError)
     )
