@@ -20,8 +20,14 @@
           <th> {{ cl.state }}</th>
           <th> {{ cl.phone1 }} </th>
           <th class='d-grid gap-2 d-md-block'>
-             <button class='btn btn-primary' type="button" (click)='getImporter()'> EDIT</button>
-             <button class='btn btn-warning' type="button">DELETE</button>
+             <button class='btn btn-primary' type="button" 
+             (click)='getImporter(clientId)' style='margin-right:5px'> EDIT</button>
+             <div *ngIf='showOneI'>
+               <p> {{ cl.name }} </p>
+               <p> {{ cl.city }} </p>
+               <p> {{ cl.phone1 }} </p> 
+              </div>
+             <button class='btn btn-warning' type="button" (click)='editImporter()'>DELETE</button>
           </th>
         </tr>
       </tbody>
@@ -40,7 +46,7 @@
           <mat-card-content>
             <div class='row'>
               <div class='col'>
-                <mat-form-field >
+                <mat-form-field appearance='fill'>
                   <mat-label>Client ID</mat-label>
                   <input type="text" matInput required   formControlName='clientId'>
                 </mat-form-field>
@@ -49,7 +55,7 @@
 
               <div class='col'>
                 <mat-form-field>
-                  <label for="name">Client Name</label>
+                  <mat-label for="name">Client Name</mat-label>
                   <input matInput type="text" matInput formControlName='name' required
                    name='name'>
                 </mat-form-field>

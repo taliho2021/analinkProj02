@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 import { Importer } from '../../models/importer';
@@ -10,8 +10,12 @@ import { ImportersService } from '../../services/importers.service';
   styleUrls: ['./importer.component.scss']
 })
 export class ImporterComponent implements OnInit {
+  @Input()
+  clientId!: string;
+  
   importer!: Importer;
   importers: Importer[] = []
+  showOneI=false
 
   importerForm = this.fb.group({
     clientId: [''],
@@ -27,6 +31,7 @@ export class ImporterComponent implements OnInit {
   });
 
   submitted = false
+  private _id: any;
 
   constructor(private imp: ImportersService,
               private fb: FormBuilder) { }
@@ -46,8 +51,19 @@ export class ImporterComponent implements OnInit {
   //     .subscribe(data => (this.importer = data))
   // }
 
-  getImporter(){
+  getImporter(_id:string){
     // Logic goes here
+    window.alert('Are you sure to edit this importer?')
+    this.showOneI = true
+    const clientId = this._id
+    this.imp.getImporter(clientId)
+      .subscribe(data =>(this.importer = data))
+  }
+
+  editImporter() {
+    // Logic goes hers
+    window.alert('Are you sute to delete this importer?');
+    
   }
 
   addImporter(importer:Importer) {
