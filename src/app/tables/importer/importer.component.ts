@@ -51,12 +51,12 @@ export class ImporterComponent implements OnInit {
   //     .subscribe(data => (this.importer = data))
   // }
 
-  getImporter(_id:string){
+  getImporter(clientId:string){
     // Logic goes here
     window.alert('Are you sure to edit this importer?')
     this.showOneI = true
-    const clientId = this._id
-    this.imp.getImporter(clientId)
+    const cId = this.clientId
+    this.imp.getImporter(cId)
       .subscribe(data =>(this.importer = data))
   }
 
