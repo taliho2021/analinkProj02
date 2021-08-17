@@ -21,6 +21,7 @@ import { SharedModule } from '../shared/shared.module';
 import { StatesComponent } from './states/states.component';
 import { TablesComponent } from './tables.component';
 import { TablesRoutingModule } from './tables-routing.module';
+import { ImporterDetailComponent } from './importer-detail/importer-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TablesRoutingModule } from './tables-routing.module';
     StatesComponent,
     ClientsComponent,
     ClientDetailComponent,
-    ImporterComponent
+    ImporterComponent,
+    ImporterDetailComponent
   ],
   imports: [
     CommonModule,

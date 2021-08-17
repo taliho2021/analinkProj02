@@ -20,18 +20,17 @@
           <th> {{ cl.state }}</th>
           <th> {{ cl.phone1 }} </th>
           <th class='d-grid gap-2 d-md-block'>
-             <button class='btn btn-primary' type="button" 
-             (click)='getImporter(clientId)' style='margin-right:5px'> EDIT</button>
-             <div *ngIf='showOneI'>
-               <p> {{ cl.name }} </p>
-               <p> {{ cl.city }} </p>
-               <p> {{ cl.phone1 }} </p> 
-              </div>
+             <button class='btn btn-primary' type="button"
+             [class.selected]='importer === selectedImporter'
+             (click)='getImporter(cl.clientId)' style='margin-right:5px'> EDIT </button>
+
              <button class='btn btn-warning' type="button" (click)='editImporter()'>DELETE</button>
           </th>
         </tr>
+
       </tbody>
     </table>
+    <app-importer-detail [importer]='selectedImporter'></app-importer-detail>
   </div>
 
   <div>

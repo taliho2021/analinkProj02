@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 import { Importer } from '../../models/importer';
 import { ImportersService } from '../../services/importers.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-importer',
@@ -12,10 +13,11 @@ import { ImportersService } from '../../services/importers.service';
 export class ImporterComponent implements OnInit {
   @Input()
   clientId!: string;
-  
+
   importer!: Importer;
   importers: Importer[] = []
   showOneI=false
+  selectedImporter? : Importer
 
   importerForm = this.fb.group({
     clientId: [''],
@@ -53,17 +55,18 @@ export class ImporterComponent implements OnInit {
 
   getImporter(clientId:string){
     // Logic goes here
-    window.alert('Are you sure to edit this importer?')
-    this.showOneI = true
-    const cId = this.clientId
-    this.imp.getImporter(cId)
+    window.alert(clientId)
+    this.imp.getImporter(clientId)
       .subscribe(data =>(this.importer = data))
+    this.selectedImporter = this.importer
+    window.alert(this.importer)
+    this.showOneI = !this.showOneI
   }
 
   editImporter() {
     // Logic goes hers
     window.alert('Are you sute to delete this importer?');
-    
+
   }
 
   addImporter(importer:Importer) {
@@ -74,7 +77,7 @@ export class ImporterComponent implements OnInit {
          this.newImporter()})
   }
 
-    newImporter(): void {
+  newImporter(): void {
       this.submitted=true
       this.importer ={
         clientId:'',
@@ -90,5 +93,5 @@ export class ImporterComponent implements OnInit {
         website:''
 
       }
-    }
+  }
 }
