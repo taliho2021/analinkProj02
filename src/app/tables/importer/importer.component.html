@@ -14,22 +14,21 @@
       </thead>
       <tbody>
         <tr *ngFor="let cl of importers">
-          <td> {{ cl.clientId }}</td>
-          <td> {{ cl.name}}</td>
-          <td> {{ cl.city }}</td>
-          <th> {{ cl.state }}</th>
+          <td> {{ cl.clientId | lowercase}}</td>
+          <td> {{ cl.name | uppercase}}</td>
+          <td> {{ cl.city | uppercase}}</td>
+          <th> {{ cl.state | uppercase }}</th>
           <th> {{ cl.phone1 }} </th>
           <th class='d-grid gap-2 d-md-block'>
-             <button class='btn btn-primary' type="button"
-             [class.selected]='importer === selectedImporter'
-             (click)='getImporter(cl.clientId)' style='margin-right:5px'> EDIT </button>
+             <button class='btn btn-primary' type="button" (click)='getImporter(cl.clientId)' style='margin-right:5px'> EDIT </button>
 
-             <button class='btn btn-warning' type="button" (click)='editImporter()'>DELETE</button>
+             <button class='btn btn-warning' type="button" (click)='deleteImporter(cl.clientId)'>DELETE</button>
           </th>
         </tr>
 
       </tbody>
     </table>
+    {{ importer }}
     <app-importer-detail [importer]='selectedImporter'></app-importer-detail>
   </div>
 
