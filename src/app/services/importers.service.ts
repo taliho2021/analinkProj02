@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Importer } from '../models/importer';
 import { Injectable } from '@angular/core';
@@ -11,6 +11,7 @@ const API_URL ='http://localhost:3000/importers';
   providedIn: 'root'
 })
 export class ImportersService {
+  [x: string]: any;
   importers: Importer[]=[]
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
@@ -25,8 +26,13 @@ export class ImportersService {
     )
   }
 
-  getImporter(clientId: any): Observable<Importer> {
-    return this.http.get<Importer>(`${API_URL}/${clientId}`)
+  getImporter(clientId: string): Observable<Importer> {
+    const url = (`${API_URL}/${clientId}`)
+    window.alert(url)
+    return this.http.get<Importer>(url)
+      .pipe(       
+        catchError(this.handleError)
+      )
   }
 
   create(userData: Importer){

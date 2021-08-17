@@ -1,6 +1,12 @@
 <div *ngIf ='importer'>
+
   <h2>{{ importer.name | uppercase  }}  Details </h2>
-  <div><span>Importer Id:  {{ importer.clientId }}</span></div>
+  <div><span>Importer Id: </span> {{ importer.clientId }} </div>
+  <div>
+    <label for="importer-name">Importer name:</label>
+    <input id='importer-name'  [(ngModel)] = 'importer.name' placeholder='name'>
+  </div>
+  
   <div><span>Importer City:  {{ importer.city }} </span></div>
   <div><span>Importer State:  {{ importer.state }} </span></div>
   <div><span>Importer Phone # {{ importer.phone1 }} </span></div>

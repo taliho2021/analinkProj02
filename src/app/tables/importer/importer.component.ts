@@ -3,7 +3,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 import { Importer } from '../../models/importer';
 import { ImportersService } from '../../services/importers.service';
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-importer',
@@ -14,7 +13,7 @@ export class ImporterComponent implements OnInit {
   @Input()
   clientId!: string;
 
-  importer!: Importer;
+  importer! : Importer
   importers: Importer[] = []
   showOneI=false
   selectedImporter? : Importer
@@ -55,15 +54,13 @@ export class ImporterComponent implements OnInit {
 
   getImporter(clientId:string){
     // Logic goes here
-    window.alert(clientId)
+    // window.alert(clientId)
     this.imp.getImporter(clientId)
-      .subscribe(data =>(this.importer = data))
-    this.selectedImporter = this.importer
-    window.alert(this.importer)
-    this.showOneI = !this.showOneI
-  }
+      .subscribe(Importer =>(this.importer = Importer))
+      window.alert(JSON.stringify(this.importer))
+     }
 
-  editImporter() {
+  deleteImporter(clientId:string) {
     // Logic goes hers
     window.alert('Are you sute to delete this importer?');
 

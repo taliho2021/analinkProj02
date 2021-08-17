@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { CountriesComponent } from './countries/countries.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ImporterComponent } from './importer/importer.component';
+import { ImporterDetailComponent } from './importer-detail/importer-detail.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,7 +22,6 @@ import { SharedModule } from '../shared/shared.module';
 import { StatesComponent } from './states/states.component';
 import { TablesComponent } from './tables.component';
 import { TablesRoutingModule } from './tables-routing.module';
-import { ImporterDetailComponent } from './importer-detail/importer-detail.component';
 
 @NgModule({
   declarations: [
