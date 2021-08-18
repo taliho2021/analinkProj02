@@ -52,7 +52,6 @@ export class ImporterComponent implements OnInit {
     // window.alert(clientId)
     this.imp.getImporter(clientId)
       .subscribe(Importer =>(this.selectedImporter = Importer))
-      window.alert(JSON.stringify(this.selectedImporter))
   }
 
   deleteImporter(clientId:string) {

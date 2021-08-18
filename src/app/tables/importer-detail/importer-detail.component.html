@@ -1,11 +1,13 @@
 <div *ngIf ='importer' class='container'>
 
   <h2>{{ importer.name | uppercase  }}  Details </h2>
-  <div><span>Importer Id: </span> {{ importer.clientId }} </div>
-  <div><span>Importer Name:  {{importer.name}}</span>  </div>
-  <div><span>Importer Address 1:  {{ importer.address1 }} </span></div>
-  <div><span>Importer Address 2:  {{ importer.address2 }} </span></div>
-  <div><span>Importer City:  {{ importer.city }} </span></div>
-  <div><span>Importer State:  {{ importer.state }} </span></div>
-  <div><span>Importer Phone # {{ importer.phone1 }} </span></div>
+
+    <div class='row mb-3'><span>Importer Id:  {{ importer.clientId }} </span> </div>
+    <div class='row mb-3'><span>Importer Name:  {{importer.name}}</span>  </div>
+    <div class='row mb-3'><span>Importer Address 1:  {{ importer.address1 }} </span></div>
+    <div class='row mb-3'><span>Importer Address 2:  {{ importer.address2 }} </span></div>
+    <div class='row mb-3'><span>Importer City:  {{ importer.city }} </span></div>
+    <div class='row mb-3'><span>Importer State:  {{ importer.state }} </span></div>
+    <div class='row mb-3'><span>Importer Phone # {{ importer.phone1 }} </span></div>
+
 </div>
