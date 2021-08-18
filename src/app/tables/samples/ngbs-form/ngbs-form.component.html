@@ -1,99 +1,101 @@
 <h1 style='text-align: center; color:slategray'> Form Using NG Bootstrap</h1>
 
 <form  [formGroup] ='importerForm' (ngSubmit)='onSubmit()'>
-
-<div class="row">Row 1
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row"><span style="font-weight: 600">Dates</span>
-   <div class="col">
-    <label for="eDate">Export</label>
-    <input type="date">
+<table class='table table-striped'> 
+  <tr class='table-primary'>
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </tr>
+  <div class="row"><span style="font-weight: 600">Dates</span>
+     <div class="col">
+      <label for="eDate">Export</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="lDate">Loading</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="iDate">Import</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="uDate">Unloading</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="rDate">Ready</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="dDate">Delivery</label>
+      <input type="date">
+    </div>
   </div>
-  <div class="col">
-    <label for="lDate">Loading</label>
-    <input type="date">
+  
+  <tr class="table-secondary">
+    <td>col 1</td>
+    <td>col 2</td>
+    <td>col 3</td>
+  </tr>
+  <tr class="table-success">
+    <td>col 1</td>
+    <td>col 2</td>
+    <td>col 3</td>
+  </tr>
+  <tr class="table-danger">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <tr class="table-warning">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <tr class="table-info">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <tr class="table-light">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <div class="row">Row 9
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
   </div>
-  <div class="col">
-    <label for="iDate">Import</label>
-    <input type="date">
+  <div class="row">Row 10
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
   </div>
-  <div class="col">
-    <label for="uDate">Unloading</label>
-    <input type="date">
+  <div class="row">Row 11
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
   </div>
-  <div class="col">
-    <label for="rDate">Ready</label>
-    <input type="date">
+  <div class="row">Row 12
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
   </div>
-  <div class="col">
-    <label for="dDate">Delivery</label>
-    <input type="date">
+  <div class="row">Row 13
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
   </div>
-</div>
-
-<div class="row">Row 3
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 4
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 5
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 6
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 7
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 8
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 9
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 10
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 11
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 12
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 13
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
-<div class="row">Row 14
-  <div class="col">col 1</div>
-  <div class="col">col 2</div>
-  <div class="col">col 3</div>
-</div>
+  <div class="row">Row 14
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </div>
+  
+</table>
 <button type='button' (click)='addImporter()'>Add Importer </button>
 </form>
 

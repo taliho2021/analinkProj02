@@ -83,7 +83,14 @@ export let menu: NavItem[] = [
                 displayName: ' Ng Bootstrap Form',
                 iconName: 'assignment',
                 route: 'tables/samples/ng'
-              }]
+              },
+
+              {
+                displayName: 'Ng Grid Form',
+                iconName: 'add_chart',
+                route: 'tables/samples/ngGrid'
+              }
+              ]
             }
 
 

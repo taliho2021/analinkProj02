@@ -23,6 +23,8 @@
     "@angular/platform-browser": "~12.1.0",
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
+    "ag-grid-angular": "^26.0.0",
+    "ag-grid-community": "^26.0.0",
     "bootstrap": "^5.0.2",
     "chart.js": "^2.9.4",
     "firebase": "^8.6.8",
