@@ -28,8 +28,14 @@
 
       </tbody>
     </table>
-    {{ importer }}
-    <app-importer-detail [importer]='selectedImporter'></app-importer-detail>
+
+    <app-importer-detail
+       *ngIf='selectedImporter; else infoText'
+       [importer]='selectedImporter'></app-importer-detail>
+
+      <ng-template #infoText >
+        <p>Please select an Importer</p>
+      </ng-template>
   </div>
 
   <div>
@@ -109,11 +115,13 @@
         </mat-card>
 
         </form>
-        {{ importerForm.value | json}}
+
 
 
       <div *ngIf='!submitted'>
         <button class='btn btn-success' (click)='newImporter()'>Add New</button>
-
       </div>
+
+      {{ importerForm.value | json}}
+
   </div>
