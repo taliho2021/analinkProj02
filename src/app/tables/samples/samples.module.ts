@@ -1,3 +1,5 @@
+import 'ag-grid-enterprise';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AgGridModule } from 'ag-grid-angular';
@@ -25,7 +27,7 @@ import { SamplesRoutingModule } from './samples-routing.module';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    AgGridModule.withComponents
+    AgGridModule.withComponents([])
   ]
 })
 export class SamplesModule { }
