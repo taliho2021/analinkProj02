@@ -1,12 +1,16 @@
 <button (click)='getSelectedRows()'> Get Selected Rows</button>
 <ag-grid-angular
     #agGrid
-    style="width: 1200px; height: 800px;"
+    style="width: 1400px; height: 800px;"
     class="ag-theme-alpine"
     [defaultColDef]='defaultColDef'
     [autoGroupColumnDef]='autoGroupColumnDef'
     [rowData]="clients"
     [columnDefs]="columnDefs"
     rowSelection='multiple'
+    [suppressRowClickSelection] = true
+    [pagination] = 'pagination'
+    [paginationPageSize] = 'paginationPageSize'
 >
 </ag-grid-angular>
+

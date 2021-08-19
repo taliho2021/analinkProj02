@@ -16,19 +16,19 @@ export class NgGridComponent implements OnInit {
   @ViewChild('agGrid')
   agGrid!: AgGridAngular;
 
-  defaultColDef = {
+  defaultColDef = {                 
     sortable: true,
     filter: true
   }
 
   columnDefs = [
-    { field: 'id', sortable: true, filter: true, checkboxSelection: true, rowGroup: true },
-    { field: 'name', sortable: true, filter: true },
-    { field: 'country.name', sortable: true, filter: true},
+    { field: 'id', sortable: true, filter: true,rowGroup: true },
+    // { field: 'name', sortable: true, filter: true },
+    { field: 'country.name', sortable: true, filter: true, rowGroup: true},
     { field: 'country.code', sortable: true, filter: true },
     { field: 'date', sortable: true, filter: true },
     { field: 'status', sortable: true, filter: true},
-    { field: 'representative.name', sortable: true, filter: true},
+    { field: 'representative.name', sortable: true, filter: true, rowGroup: true},
     { field: 'representative.image', sortable: true, filter: true },
     { field: 'balance', sortable: true, filter: true }
 
@@ -44,6 +44,8 @@ export class NgGridComponent implements OnInit {
   }
 
   clients: Customer[] =[];
+  pagination = true
+  paginationPageSize = 15
 
 constructor(private http: HttpClient,
             private custService: CustomersService) { }
