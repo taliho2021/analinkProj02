@@ -1,12 +1,27 @@
-<button (click)='getSelectedRows()'> Get Selected Rows</button>
+<mat-card>
+  <mat-card-title>Quick Filter Searching</mat-card-title>
+  <mat-form-field appearance='outline'>
+    <mat-label>Search</mat-label>
+    <input matInput [formControl]='q' type="search">
+  </mat-form-field>
+  <button (click)='getSelectedRows()'> Get Selected Rows</button>
+
+
+</mat-card>
 <ag-grid-angular
-    #agGrid
-    style="width: 1200px; height: 800px;"
-    class="ag-theme-alpine"
-    [defaultColDef]='defaultColDef'
-    [autoGroupColumnDef]='autoGroupColumnDef'
-    [rowData]="clients"
-    [columnDefs]="columnDefs"
-    rowSelection='multiple'
->
-</ag-grid-angular>
+      #agGrid
+      style="width: 1500px; height: 100%; padding-top: 10px"
+      class="ag-theme-alpine"
+      [pagination] ='pagination'
+      [paginationPageSize]='paginationPageSize'
+      [animateRows]='true'
+      [defaultColDef]='defaultColDef'
+      [autoGroupColumnDef]='autoGroupColumnDef'
+      [rowData]="clients"
+      [columnDefs]="columnDefs"
+      rowSelection='multiple'
+      [floatingFilter] = 'true'
+      (gridReady)='onGridReady($event)'
+      [cacheQuickFilter]='true'
+  >
+  </ag-grid-angular>

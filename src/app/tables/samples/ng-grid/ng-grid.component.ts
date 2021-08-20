@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 import { AgGridAngular } from 'ag-grid-angular';
 import { Customer } from '../../../models/customer';
 import { CustomersService } from '../../../services/customers.service';
+import { FormControl } from '@angular/forms';
+import { GridApi } from 'ag-grid-community';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ng-grid',
@@ -16,21 +19,42 @@ export class NgGridComponent implements OnInit {
   @ViewChild('agGrid')
   agGrid!: AgGridAngular;
 
+  // Search query
+  q = new FormControl('')
+
+  // Unsubscribe from observables when the component is destroyed
+  private destroy = new Subject()
+
+  // The ag-Grid Grid API
+  private gridApi!: GridApi
+
   defaultColDef = {
     sortable: true,
-    filter: true
+    filter: true,
+    editable: true
   }
 
+  pagination = true
+  paginationPageSize = 10
+
   columnDefs = [
-    { field: 'id', sortable: true, filter: true, checkboxSelection: true, rowGroup: true },
-    { field: 'name', sortable: true, filter: true },
-    { field: 'country.name', sortable: true, filter: true},
-    { field: 'country.code', sortable: true, filter: true },
-    { field: 'date', sortable: true, filter: true },
-    { field: 'status', sortable: true, filter: true},
-    { field: 'representative.name', sortable: true, filter: true},
-    { field: 'representative.image', sortable: true, filter: true },
-    { field: 'balance', sortable: true, filter: true }
+    { headerName: 'Client Name', field: 'id', checkboxSelection: true },
+    { field: 'name', filter: 'agTextColumnFilter',
+              filterParams: {
+                filterOptions: ['contains', 'notContains']
+
+    }},
+    { field: 'country.name'},
+    { field: 'country.code' },
+    { field: 'date' },
+    { field: 'status'},
+    { field: 'representative.name'},
+    { field: 'representative.image'},
+    { field: 'balance', filter: 'agNumberColumnFilter',
+          filterParams: {
+            applyButton: true,
+            clearButton: true
+          }}
 
   ];
 
@@ -43,6 +67,10 @@ export class NgGridComponent implements OnInit {
     }
   }
 
+  groupDisplayType = {
+    groupDisplayType :'singleColumn'
+  }
+
   clients: Customer[] =[];
 
 constructor(private http: HttpClient,
@@ -50,6 +78,11 @@ constructor(private http: HttpClient,
 
 ngOnInit(): void {
   this.showClients();
+
+  this.q.valueChanges
+    .pipe(takeUntil(this.destroy))
+    .subscribe(value =>
+  this.gridApi.setQuickFilter(value))
   }
 
 showClients(){
@@ -70,5 +103,10 @@ getSelectedRows(): void {
 
       window.alert(`Selected nodes: ${selectedDataStringPresentation}`);
   }
+
+  onGridReady({ api} : { api: GridApi}) {
+    this.gridApi = api
+  }
+
 
 }
