@@ -51,7 +51,7 @@ export class NgGridComponent implements OnInit {
     }},
     { field: 'country.name'},
     { field: 'country.code' },
-    { field: 'date', filter: 'date'},     
+    { field: 'date', filter: 'date'},
     { field: 'status'},
     { field: 'representative.name'},
     { field: 'representative.image'},
