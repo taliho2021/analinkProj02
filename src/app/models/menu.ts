@@ -37,7 +37,14 @@ export let menu: NavItem[] = [
     {
         displayName: 'Vendors',
         iconName: 'person_search',
-        route: 'vendors'
+        route: 'vendors',
+        children: [
+          {
+            displayName: 'Ng Grid Form',
+            iconName: 'add_chart',
+            route: 'vendors/details'
+          }
+        ]
     },
 
     {
@@ -90,6 +97,7 @@ export let menu: NavItem[] = [
                 iconName: 'add_chart',
                 route: 'tables/samples/ngGrid'
               }
+
               ]
             }
 

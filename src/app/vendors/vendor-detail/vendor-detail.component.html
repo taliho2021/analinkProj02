@@ -1,0 +1,483 @@
+<h1>Vender Details</h1>
+<mat-card class='sample'>
+
+  <mat-card-title>Vendor Information</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]='vendorForm'>
+      <p>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label> Company Code :</mat-label>
+            <input matInput placeholder='Company Code' type="search" formControlName='vendorId' >
+        </mat-form-field>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label>  Company Name :</mat-label>
+            <input matInput placeholder='Company Name' type="text" formControlName='name'>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class='col-md-6'>
+            <mat-label>Address 1: </mat-label>
+            <input matInput placeholder='address 1:' type="text" formControlName='address1'>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class='col-md-6'>
+          <mat-label>Address 2: </mat-label>
+          <input matInput placeholder='address 1:' type="text" formControlName='address2'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='city'>  City </label>
+          <input matInput type="text" formControlName='city'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for="state"> State</label>
+          <input matInput type="text" formControlName='state'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='postalCode'> Postal Code: </label>
+          <input matInput type="text" formControlName='postalCode'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class=col-sm-3>
+          <label for="country"> Country :</label>
+          <input matInput type="text" formControlName='country'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='phone1'> Phone 1: </label>
+          <input matInput type="text" formControlName='phone1'>
+      </mat-form-field>
+
+      <mat-form-field class='col-sm-4'>
+          <label for="email"> Email :</label>
+          <input matInput type="email" formControlName='email'>
+      </mat-form-field>
+    </p>
+
+      <mat-form-field class='col-md-4'>
+          <label for='website'> Website </label>
+          <input matInput type="url" formControlName='website'>
+      </mat-form-field>
+
+    </form>
+
+  </mat-card-content>
+    <p style='margin: 20px; padding: 20px'>
+      <button mat-raised-button color='primary'>Add</button>
+      <button mat-raised-button color='accent'>Edit</button>
+    </p>
+
+  </mat-card>
+
+<mat-card class='sample'>
+  <mat-card-header>CARD 2</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]='vendorForm'>
+      <p>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label> Company Code :</mat-label>
+            <input matInput placeholder='Company Code' type="search" formControlName='vendorId' >
+        </mat-form-field>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label>  Company Name :</mat-label>
+            <input matInput placeholder='Company Name' type="text" formControlName='name'>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class='col-md-6'>
+            <mat-label>Address 1: </mat-label>
+            <input matInput placeholder='address 1:' type="text" formControlName='address1'>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class='col-md-6'>
+          <mat-label>Address 2: </mat-label>
+          <input matInput placeholder='address 1:' type="text" formControlName='address2'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='city'>  City </label>
+          <input matInput type="text" formControlName='city'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for="state"> State</label>
+          <input matInput type="text" formControlName='state'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='postalCode'> Postal Code: </label>
+          <input matInput type="text" formControlName='postalCode'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class=col-sm-3>
+          <label for="country"> Country :</label>
+          <input matInput type="text" formControlName='country'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='phone1'> Phone 1: </label>
+          <input matInput type="text" formControlName='phone1'>
+      </mat-form-field>
+
+      <mat-form-field class='col-sm-4'>
+          <label for="email"> Email :</label>
+          <input matInput type="email" formControlName='email'>
+      </mat-form-field>
+    </p>
+
+   <p>
+      <mat-form-field class='col-md-4'>
+          <label for='website'> Website </label>
+          <input matInput type="url" formControlName='website'>
+      </mat-form-field>
+   </p>
+
+
+    </form>
+  </mat-card-content>
+  <p style='margin: 20px; padding: 20px'>
+      <button mat-raised-button color='primary'>Add</button>
+      <button mat-raised-button color='accent'>Edit</button>
+   </p>
+
+</mat-card>
+
+<mat-card class='sample'>
+  <mat-card-header>CARD 3</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]='vendorForm'>
+      <p>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label> Company Code :</mat-label>
+            <input matInput placeholder='Company Code' type="search" formControlName='vendorId' >
+        </mat-form-field>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label>  Company Name :</mat-label>
+            <input matInput placeholder='Company Name' type="text" formControlName='name'>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class='col-md-6'>
+            <mat-label>Address 1: </mat-label>
+            <input matInput placeholder='address 1:' type="text" formControlName='address1'>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class='col-md-6'>
+          <mat-label>Address 2: </mat-label>
+          <input matInput placeholder='address 1:' type="text" formControlName='address2'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='city'>  City </label>
+          <input matInput type="text" formControlName='city'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for="state"> State</label>
+          <input matInput type="text" formControlName='state'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='postalCode'> Postal Code: </label>
+          <input matInput type="text" formControlName='postalCode'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class=col-sm-3>
+          <label for="country"> Country :</label>
+          <input matInput type="text" formControlName='country'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='phone1'> Phone 1: </label>
+          <input matInput type="text" formControlName='phone1'>
+      </mat-form-field>
+
+      <mat-form-field class='col-sm-4'>
+          <label for="email"> Email :</label>
+          <input matInput type="email" formControlName='email'>
+      </mat-form-field>
+  </p>
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='website'> Website </label>
+          <input matInput type="url" formControlName='website'>
+      </mat-form-field>
+  </p>
+
+
+    </form>
+  </mat-card-content>
+  <p style='margin: 20px; padding: 20px'>
+    <button mat-raised-button color='primary'>Add</button>
+    <button mat-raised-button color='accent'>Edit</button>
+  </p>
+</mat-card>
+
+<mat-card class='sample'>
+  <mat-card-header>CARD 4</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]='vendorForm'>
+      <p>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label> Company Code :</mat-label>
+            <input matInput placeholder='Company Code' type="search" formControlName='vendorId' >
+        </mat-form-field>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label>  Company Name :</mat-label>
+            <input matInput placeholder='Company Name' type="text" formControlName='name'>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class='col-md-6'>
+            <mat-label>Address 1: </mat-label>
+            <input matInput placeholder='address 1:' type="text" formControlName='address1'>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class='col-md-6'>
+          <mat-label>Address 2: </mat-label>
+          <input matInput placeholder='address 1:' type="text" formControlName='address2'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='city'>  City </label>
+          <input matInput type="text" formControlName='city'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for="state"> State</label>
+          <input matInput type="text" formControlName='state'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='postalCode'> Postal Code: </label>
+          <input matInput type="text" formControlName='postalCode'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class=col-sm-3>
+          <label for="country"> Country :</label>
+          <input matInput type="text" formControlName='country'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='phone1'> Phone 1: </label>
+          <input matInput type="text" formControlName='phone1'>
+      </mat-form-field>
+
+      <mat-form-field class='col-sm-4'>
+          <label for="email"> Email :</label>
+          <input matInput type="email" formControlName='email'>
+      </mat-form-field>
+  </p>
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='website'> Website </label>
+          <input matInput type="url" formControlName='website'>
+      </mat-form-field>
+  </p>
+
+
+    </form>
+  </mat-card-content>
+  <p style='margin: 20px; padding: 20px'>
+    <button mat-raised-button color='primary'>Add</button>
+    <button mat-raised-button color='accent'>Edit</button>
+  </p>
+</mat-card>
+
+<mat-card class='sample'>
+  <mat-card-header>CARD 5</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]='vendorForm'>
+      <p>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label> Company Code :</mat-label>
+            <input matInput placeholder='Company Code' type="search" formControlName='vendorId' >
+        </mat-form-field>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label>  Company Name :</mat-label>
+            <input matInput placeholder='Company Name' type="text" formControlName='name'>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class='col-md-6'>
+            <mat-label>Address 1: </mat-label>
+            <input matInput placeholder='address 1:' type="text" formControlName='address1'>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class='col-md-6'>
+          <mat-label>Address 2: </mat-label>
+          <input matInput placeholder='address 1:' type="text" formControlName='address2'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='city'>  City </label>
+          <input matInput type="text" formControlName='city'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for="state"> State</label>
+          <input matInput type="text" formControlName='state'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='postalCode'> Postal Code: </label>
+          <input matInput type="text" formControlName='postalCode'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class=col-sm-3>
+          <label for="country"> Country :</label>
+          <input matInput type="text" formControlName='country'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='phone1'> Phone 1: </label>
+          <input matInput type="text" formControlName='phone1'>
+      </mat-form-field>
+
+      <mat-form-field class='col-sm-4'>
+          <label for="email"> Email :</label>
+          <input matInput type="email" formControlName='email'>
+      </mat-form-field>
+  </p>
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='website'> Website </label>
+          <input matInput type="url" formControlName='website'>
+      </mat-form-field>
+  </p>
+
+    </form>
+  </mat-card-content>
+  <p style='margin: 20px; padding: 20px'>
+    <button mat-raised-button color='primary'>Add</button>
+    <button mat-raised-button color='accent'>Edit</button>
+  </p>
+
+</mat-card>
+
+<mat-card class='sample'>
+  <mat-card-header>CARD 6</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]='vendorForm'>
+      <p>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label> Company Code :</mat-label>
+            <input matInput placeholder='Company Code' type="search" formControlName='vendorId' >
+        </mat-form-field>
+
+        <mat-form-field appearance='fill' class='col-md-4'>
+            <mat-label>  Company Name :</mat-label>
+            <input matInput placeholder='Company Name' type="text" formControlName='name'>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class='col-md-6'>
+            <mat-label>Address 1: </mat-label>
+            <input matInput placeholder='address 1:' type="text" formControlName='address1'>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class='col-md-6'>
+          <mat-label>Address 2: </mat-label>
+          <input matInput placeholder='address 1:' type="text" formControlName='address2'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='city'>  City </label>
+          <input matInput type="text" formControlName='city'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for="state"> State</label>
+          <input matInput type="text" formControlName='state'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='postalCode'> Postal Code: </label>
+          <input matInput type="text" formControlName='postalCode'>
+      </mat-form-field>
+  </p>
+
+  <p>
+      <mat-form-field class=col-sm-3>
+          <label for="country"> Country :</label>
+          <input matInput type="text" formControlName='country'>
+      </mat-form-field>
+
+      <mat-form-field class='col-md-4'>
+          <label for='phone1'> Phone 1: </label>
+          <input matInput type="text" formControlName='phone1'>
+      </mat-form-field>
+
+      <mat-form-field class='col-sm-4'>
+          <label for="email"> Email :</label>
+          <input matInput type="email" formControlName='email'>
+      </mat-form-field>
+  </p>
+  <p>
+      <mat-form-field class='col-md-4'>
+          <label for='website'> Website </label>
+          <input matInput type="url" formControlName='website'>
+      </mat-form-field>
+  </p>
+
+
+    </form>
+  </mat-card-content>
+  <p style='margin: 20px; padding: 20px'>
+    <button mat-raised-button color='primary'>Add</button>
+    <button mat-raised-button color='accent'>Edit</button>
+  </p>
+</mat-card>

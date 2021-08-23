@@ -36,7 +36,10 @@ export class NgGridComponent implements OnInit {
   defaultColDef = {
     sortable: true,
     filter: true,
-    editable: true
+    editable: true,
+    flex:1,
+    minwidth:100,
+    resizable: true
   }
 
   pagination = true
