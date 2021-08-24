@@ -8,6 +8,7 @@ import { FdaComponent } from './fda/fda.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './log-in/log-in.component';
 import { LogOutComponent } from './log-out/log-out.component';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
@@ -57,6 +58,7 @@ const firebaseConfig = {
     MatMenuModule,
     MatDividerModule,
     MatToolbarModule,
+    MatButtonModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,

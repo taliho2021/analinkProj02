@@ -27,7 +27,7 @@
           (click)="drawer.toggle()"
           *ngIf="isHandset$ | async">
         </button>
-        <button mat-button (click)="drawer.toggle()">
+        <button mat-fab color='accent' (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
 
@@ -35,8 +35,8 @@
 
         <!-- Right side of top portion of navbar -->
         <span class="example-spacer"></span>
-       
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [mat-menu-trigger-for] ="menu1">
+
+        <button mat-fab color='accent' class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [mat-menu-trigger-for] ="menu1">
           <mat-icon>favorite</mat-icon>
           <mat-menu #menu1 = "matMenu">
             <button mat-menu-item>Quick Entry</button>
@@ -45,7 +45,7 @@
           </mat-menu>
         </button>
 
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu2">
+        <button mat-fab color='warn' class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu2">
          <mat-icon>share</mat-icon>
          <mat-menu #menu2 = "matMenu">
           <button mat-menu-item>Settings</button>
@@ -54,7 +54,7 @@
         </mat-menu>
         </button>
 
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu3">
+        <button mat-fab color='primary' class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu3">
           <mat-icon>settings</mat-icon>
           <mat-menu #menu3 = "matMenu">
             <button mat-menu-item>Import</button>
@@ -63,7 +63,7 @@
          </mat-menu>
          </button>
 
-         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu4">
+         <button mat-fab color='accent' class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu4">
           <mat-icon>help_outline</mat-icon>
           <mat-menu #menu4 = "matMenu">
             <button mat-menu-item>Import</button>
@@ -72,7 +72,7 @@
          </mat-menu>
          </button>
 
-         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu5">
+         <button mat-fab style='color:ivory' class="example-icon" aria-label="Example icon-button with share icon"  [mat-menu-trigger-for]="menu5">
           <mat-icon>person_outline</mat-icon>
           <mat-menu #menu5 = "matMenu">
            <button mat-menu-item>Authority</button>
