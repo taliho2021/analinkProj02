@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-interface NavItem {
-=======
 export interface NavItem {
->>>>>>> c58fbdf9ff7a169bbd36f2e0cc35f79510856f96
   displayName: string;
   disabled?: boolean;
   iconName: string;
