@@ -18,9 +18,9 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
-    AgGridModule.withComponents([]),
     HttpClientModule,
     AppRoutingModule,
+    AgGridModule.withComponents([]),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
