@@ -74,10 +74,11 @@ mat-sidenav-container {
 
   .mat-sidenav {
     width: 220px;
-    padding: 10px;
-    margin:10px;
+    padding: 5px;
+    margin:5px;
     background: #002b5c;
-    color: yellowgreen
+    color: yellowgreen;
+    font-size: 1.2em
   }
 
   button.menu-button {
