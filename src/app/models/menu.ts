@@ -1,4 +1,10 @@
-import { NavItem } from './nav-item';
+export interface NavItem {
+  displayName: string;
+  disabled?: boolean;
+  iconName: string;
+  route?: string;
+  children?: NavItem[];
+}
 
 export let menu: NavItem[] = [
     {

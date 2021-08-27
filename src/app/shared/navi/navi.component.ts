@@ -13,17 +13,18 @@ import { menu } from '../../models/menu'
   styleUrls: ['./navi.component.scss']
 })
 export class NaviComponent implements OnInit {
-  
+
   private opened: boolean = true;
   private mediaWatcher: Subscription;
   public menu: NavItem[] = menu;
-  
+  depth =0;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     )
-  constructor(private breakpointObserver: BreakpointObserver, private media: MediaObserver) { 
+  constructor(private breakpointObserver: BreakpointObserver, private media: MediaObserver) {
        this.mediaWatcher = this.media.media$.subscribe((MediaChange: MediaChange) =>{
          this.handleMediaChange(MediaChange);
        }

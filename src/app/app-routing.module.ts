@@ -1,11 +1,13 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { AppComponent } from './app.component';
 import { LogInComponent } from './shared/log-in/log-in.component';
 import { NaviComponent } from './shared/navi/navi.component';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-    {path: '', pathMatch:'full', component: NaviComponent},
+    // {path: '', pathMatch:'full', redirectTo: 'AppComponent'},
+    { path: '', pathMatch: 'full', redirectTo: 'NaviComponent'},
     { path: 'cb', loadChildren: () => import('./cb/cb.module').then(m => m.CbModule) },
     { path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule) },
     { path: 'vendors', loadChildren: () => import('./vendors/vendors.module').then(m => m.VendorsModule) },

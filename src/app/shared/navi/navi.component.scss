@@ -36,11 +36,15 @@
   mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
   }
-  
+
   .mat-sidenav {
     width: 220px;
+    padding: 10px;
+    margin:10px;
+    background: #002b5c;
+    color: yellowgreen
   }
-  
+
   button.menu-button {
     color: inherit;
     background: transparent;
