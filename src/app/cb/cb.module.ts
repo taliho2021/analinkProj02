@@ -1,3 +1,4 @@
+import { AddressComponent } from './address/address.component';
 import { CbComponent } from './cb.component';
 import { CbRoutingModule } from './cb-routing.module';
 import { CommonModule } from '@angular/common';
@@ -7,11 +8,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { VarChartsModule } from '../var-charts/var-charts.module';
 
 @NgModule({
   declarations: [
-    CbComponent
+    CbComponent,
+    AddressComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,8 @@ import { VarChartsModule } from '../var-charts/var-charts.module';
     MatTabsModule,
     MatButtonModule,
     FlexLayoutModule,
-    VarChartsModule
+    VarChartsModule,
+    ReactiveFormsModule
   ]
 })
 export class CbModule { }

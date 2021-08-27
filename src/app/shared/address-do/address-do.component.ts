@@ -36,7 +36,7 @@ export class AddressDoComponent implements OnInit {
 
  
   onSubmit(): void {
-    alert('Thanks!');
+    this.addressForm.reset()
   }
 
   showStates() {

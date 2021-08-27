@@ -1,9 +1,11 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport
+    <mat-sidenav #drawer class="sidenav mat-elevation-z8" fixedInViewport
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false">
-      <mat-toolbar>Menu</mat-toolbar>
+      <mat-toolbar>Main Menu</mat-toolbar>
+
+
       <mat-nav-list>
         <div class="profile-card">
           <div class="header">
@@ -83,8 +85,8 @@
          </button>
 
       </mat-toolbar>
-
-      <!-- Add Content Here -->
-         <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
+        
     </mat-sidenav-content>
+ 
 </mat-sidenav-container>

@@ -16,18 +16,30 @@ export interface AuthResponseData {
   registered?: boolean;
 }
 
+const API_URL ='http://localhost:3000/users';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
 
-constructor(public router: Router) {
+constructor(public router: Router,
+            private http: HttpClient) {
 
 }
 
 get isLoggedIn(): boolean {
   const  user  =  JSON.parse(localStorage.getItem('user')!);
   return  user  !==  null;
+}
+
+login(email:string, password:string): Observable<any>{
+  return this.http.get(API_URL)
+
+}
+
+logout(){
+
 }
 }

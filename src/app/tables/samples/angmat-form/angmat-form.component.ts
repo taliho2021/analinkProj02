@@ -18,6 +18,7 @@ export class AngmatFormComponent implements OnInit {
     this.importerForm = this.fb.group({
       importers: this.fb.array([])
     })
+    this.addImporter()
   }
 
   importers(): FormArray{

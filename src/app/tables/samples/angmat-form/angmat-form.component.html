@@ -1,4 +1,4 @@
-<h1 style='text-align: center; color:orange;'>
+<h1 style='text-align:center; color:orange;'>
     Angular Material Form with Nested Formgroup and Formarray</h1>
 
 <form  [formGroup] ='importerForm'  (ngSubmit)="onSubmit()" class='angForm'>
@@ -14,7 +14,7 @@
                     </mat-form-field>
 
                     <mat-form-field appearance='fill' class='col-md-4'>
-                        <mat-label> {{ impIndex }} Company Name :</mat-label>
+                        <mat-label> {{ impIndex }}: Company Name :</mat-label>
                         <input matInput placeholder='Company Name' type="text" formControlName='name'>
                     </mat-form-field>
                 </p>
@@ -103,11 +103,12 @@
 
 
             </div>
+            <button type='button' (click)='addImporter()'>Add Importer </button> | 
+
             <button type='button' (click)='removeImporter(impIndex)'>Delete Importer </button>
         </div>
     </div>
-    <button type='button' (click)='addImporter()'>Add Importer </button>
-
+    
 </form>
 
 {{ this.importerForm.value | json}}

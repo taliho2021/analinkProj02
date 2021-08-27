@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CountryService } from './services/country.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IsfModule } from './isf/isf.module';
+import { LayoutsModule } from './layouts/layouts.module';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
 
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    IsfModule
+    IsfModule,
+    LayoutsModule
 
   ],
   providers: [CountryService],

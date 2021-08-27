@@ -1,4 +1,10 @@
-import { NavItem } from './nav-item';
+interface NavItem {
+  displayName: string;
+  disabled?: boolean;
+  iconName: string;
+  route?: string;
+  children?: NavItem[];
+}
 
 export let menu: NavItem[] = [
     {
@@ -29,7 +35,6 @@ export let menu: NavItem[] = [
                 iconName: 'attach_money',
                 route: 'clients/customers'
             },
-
 
         ]
     },
@@ -166,7 +171,5 @@ export let menu: NavItem[] = [
           }
         ]
 }
-
-
 
 ]

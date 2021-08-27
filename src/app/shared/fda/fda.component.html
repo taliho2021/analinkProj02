@@ -32,7 +32,7 @@
 
 
     <div *ngFor ='let prod of product.controls; let i = index'>
-      <span># {{i}} :</span>
+      <p># {{i + 1}} :</p>
       <label for="prod.prodCode-{{ i }}">Product Code:</label>
       <input id='prod.prodCode-{{ i }}' type="text" [formControlName] ="i">
 
