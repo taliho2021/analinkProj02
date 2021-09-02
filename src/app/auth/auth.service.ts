@@ -29,16 +29,21 @@ constructor(public router: Router,
 
 }
 
-get isLoggedIn(): boolean {
+public isAuthenticated(): boolean {
   const  user  =  JSON.parse(localStorage.getItem('user')!);
-  return  user  !==  null;
+  if (user && JSON.parse(user)){
+    return true
+  }
+  return  false;
 }
 
-login(email:string, password:string): Observable<any>{
-  return this.http.get(API_URL)
-
+public setUserInfo(user:string) {
+  localStorage.setItem('userInfo', JSON.stringify(user))
 }
 
+public validate(email:string, password:string) {
+  return this.http.post(API_URL, {'username':email, 'pasword': password}).toPromise()
+}
 logout(){
 
 }
