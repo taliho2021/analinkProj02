@@ -2,6 +2,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AddressDoComponent } from './address-do/address-do.component';
 import { AddressFnComponent } from './address-fn/address-fn.component';
+import { AuthguardService } from '../auth/authguard.service';
 import { CommonModule } from '@angular/common';
 import { EntrySComponent } from './entry-s/entry-s.component';
 import { FdaComponent } from './fda/fda.component';
@@ -70,6 +71,10 @@ const firebaseConfig = {
     AddressDoComponent,
     AddressFnComponent,
     NaviComponent
+  ],
+
+  providers: [
+    AuthguardService
   ]
 
 })
