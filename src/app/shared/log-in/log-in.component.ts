@@ -23,8 +23,10 @@ export class LogInComponent implements OnInit {
   login() {
     this.message = 'Trying to log in ...';
     window.alert(this.message)
+    window.alert(this.userEmail)
 
     this.authService.validate(this.userEmail, this.userPassword).then((response) => {
+     
       this.authService.setUserInfo('user')
       this.router.navigate(['/shared'])
         // Usually you would use the redirect URL from the auth service.
@@ -40,7 +42,8 @@ export class LogInComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout();
+    this.authService.logout()
+    this.router.navigate(['/log-in'])
 
   }
 }
