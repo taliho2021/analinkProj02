@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 export class AuthInterceptorService implements HttpInterceptor{
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    console.log("Interception In Progress"); // Interception Stage
+    window.alert("Interception In Progress"); // Interception Stage
     const token: string = localStorage.getItem('token')!; // This retrieves a token from local storage
     req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + token) });// This clones HttpRequest and Authorization header with Bearer token added
     req = req.clone({ headers: req.headers.set('Content-Type', 'application/json') });

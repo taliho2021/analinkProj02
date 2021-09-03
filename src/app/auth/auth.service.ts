@@ -1,8 +1,8 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Injectable, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
 
@@ -42,9 +42,10 @@ public setUserInfo(user:string) {
 }
 
 public validate(email:string, password:string) {
-  return this.http.post(API_URL, {'username':email, 'pasword': password}).toPromise()
+  return this.http.post(API_URL+'/login', {'username':email, 'pasword': password}).toPromise()
 }
-logout(){
 
+public logout(){
+   window.alert('Logged out')
 }
 }

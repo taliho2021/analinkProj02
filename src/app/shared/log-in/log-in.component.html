@@ -17,8 +17,8 @@
           <input matInput type="password" placeholder="Password">
         </mat-form-field>
       </mat-card-content>
-      <button mat-stroked-button color="accent" class="btn-block" >Sign-in</button>
-      <button mat-stroked-button color="primary" class="btn-block">Log Out</button>
+      <button mat-stroked-button color="accent" class="btn-block" (click)="login()">Sign-in</button>
+      <button mat-stroked-button color="primary" class="btn-block" (click)="logout()">Log Out</button>
     </form>
   </mat-card>
 

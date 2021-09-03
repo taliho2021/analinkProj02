@@ -22,10 +22,11 @@ export class LogInComponent implements OnInit {
 
   login() {
     this.message = 'Trying to log in ...';
+    window.alert(this.message)
 
     this.authService.validate(this.userEmail, this.userPassword).then((response) => {
-      this.authService.setUserInfo({'user': response['user']})
-      this.router.navigate(['home'])
+      this.authService.setUserInfo('user')
+      this.router.navigate(['/shared'])
         // Usually you would use the redirect URL from the auth service.
         // However to keep the example simple, we will always redirect to `/admin`.
 
