@@ -37,6 +37,10 @@ public isAuthenticated(): boolean {
   return  false;
 }
 
+// isAuthenticated() {
+//   return this.http.get('/auth/isAuthenticated');
+// }
+
 public setUserInfo(user:string) {
   localStorage.setItem('userInfo', JSON.stringify(user))
 }
