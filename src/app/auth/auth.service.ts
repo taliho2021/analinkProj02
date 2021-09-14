@@ -30,8 +30,8 @@ constructor(public router: Router,
 }
 
 public isAuthenticated(): boolean {
-  const  user  =  JSON.parse(localStorage.getItem('user')!);
-  if (user && JSON.parse(user)){
+  const  user  =  JSON.parse(localStorage.getItem('user')!);  // User's keyvalue 
+  if (user && JSON.parse(user)){  // If the user param and the user.value in local storage are same
     return true
   }
   return  false;
@@ -41,15 +41,19 @@ public isAuthenticated(): boolean {
 //   return this.http.get('/auth/isAuthenticated');
 // }
 
-public setUserInfo(user:string) {
-  localStorage.setItem('userInfo', JSON.stringify(user))
-}
 
+// Called from login component to verify the email & password in DB.
 public validate(email:string, password:string) {
   return this.http.post(API_URL+'/login', {'username':email, 'pasword': password}).toPromise()
 }
 
+//Once logged in set user info in local storage. Called from login component. 
+// Key(userInfo), value(JSON.stringigy(user)) will be stored in local storage.
+public setUserInfo(user:string) {
+  localStorage.setItem('userInfo', JSON.stringify(user))
+}
+
 public logout(){
    window.alert('Logged out')
-}
+ }
 }
