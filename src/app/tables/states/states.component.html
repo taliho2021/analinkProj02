@@ -1,0 +1,31 @@
+<h1>States Table</h1>
+
+<div class="container">
+    <mat-table class="mat-elevation-z8" [dataSource] ='dataSource' matSort>
+         <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name of State</mat-header-cell>
+            <mat-cell  mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Abbreviation Column -->
+          <ng-container matColumnDef="abbreviation">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Abbreviation of State</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.abbreviation}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"
+                (click)='onRowClicked(row)'>
+          </mat-row>
+    </mat-table>
+    <mat-paginator
+        [length] = 'length'
+        [pageSize] = '10'
+        [pageSizeOptions] ='pageSizeOptions'
+        aria-label="Select page"
+        >
+
+        </mat-paginator>
+</div>
+

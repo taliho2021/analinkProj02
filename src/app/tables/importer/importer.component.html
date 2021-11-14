@@ -1,0 +1,127 @@
+<h1>Importer List</h1>
+
+<div class="container">
+    <table class="table table-primary" >
+      <thead>
+        <tr>
+          <th>Client Id</th>
+          <th>Name of Client</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Tel #</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cl of importers">
+          <td> {{ cl.clientId | lowercase}}</td>
+          <td> {{ cl.name | uppercase}}</td>
+          <td> {{ cl.city | uppercase}}</td>
+          <th> {{ cl.state | uppercase }}</th>
+          <th> {{ cl.phone1 }} </th>
+          <th class='d-grid gap-2 d-md-block'>
+             <button class='btn btn-primary' type="button" (click)='getImporter(cl.clientId)' style='margin-right:5px'> EDIT </button>
+
+             <button class='btn btn-warning' type="button" (click)='deleteImporter(cl.clientId)'>DELETE</button>
+          </th>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <app-importer-detail
+       *ngIf='selectedImporter; else infoText'
+       [importer]='selectedImporter'></app-importer-detail>
+
+      <ng-template #infoText >
+        <p>Please select an Importer</p>
+      </ng-template>
+  </div>
+
+  <div>
+
+
+        <form [formGroup]='importerForm'
+          (ngSubmit)='addImporter(importerForm.value)' >
+
+          <mat-card class='example-card' *ngIf='submitted'>
+            <mat-card-title>Importer Registration</mat-card-title>
+
+          <mat-card-content>
+            <div class='row'>
+              <div class='col'>
+                <mat-form-field appearance='fill'>
+                  <mat-label>Client ID</mat-label>
+                  <input type="text" matInput required   formControlName='clientId'>
+                </mat-form-field>
+
+              </div>
+
+              <div class='col'>
+                <mat-form-field>
+                  <mat-label for="name">Client Name</mat-label>
+                  <input matInput type="text" matInput formControlName='name' required
+                   name='name'>
+                </mat-form-field>
+
+              </div>
+            </div>
+
+
+            <label for="address1">Address Line 1</label>
+            <input type="text" class='form-control' formControlName='address1' required
+            name='address1'>
+
+            <label for="address2">Address Line 2 </label>
+            <input type="text" class='form-control' formControlName='address2' required
+            name='address2'>
+
+            <div class='row align-items-start'>
+              <div class='col'>
+                <label for="city">City</label>
+                <input type="text" class='form-control col' formControlName='city' required
+                name='city'>
+              </div>
+
+              <div class='col'>
+                <label for="state">State</label>
+                <input type="text" class='form-control col' formControlName='state' required
+                name='state'>
+              </div>
+
+            </div>
+
+
+            <label for="country">Country</label>
+            <input type="text" class='form-control' formControlName='country' required
+            name='country'>
+
+            <label for="phone1">Phone Number</label>
+            <input type="tel" class='form-control' formControlName='phone1' required
+            name='phone1'>
+
+            <label for="email">Email</label>
+            <input type="email" class='form-control' formControlName='email' required
+            name='email'>
+
+            <label for="website">Website</label>
+            <input type="url" class='form-control' formControlName='website' required
+            name='website'>
+
+            <button class='btn btn-primary' [disabled]='!importerForm.valid' type='submit'>Add New Importer</button>
+
+          </mat-card-content>
+
+        </mat-card>
+
+        </form>
+
+
+
+      <div *ngIf='!submitted'>
+        <button class='btn btn-success' (click)='newImporter()'>Add New</button>
+      </div>
+
+      {{ importerForm.value | json}}
+
+  </div>

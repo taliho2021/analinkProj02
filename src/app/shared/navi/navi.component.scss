@@ -1,25 +1,62 @@
-.sidenav-container {
-    height: 100%;
-  }
-  
-  .sidenav {
-    width: 200px;
-  }
-  
-  .sidenav .mat-toolbar {
-    background: inherit;
-  }
-  
-  .mat-toolbar.mat-primary {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-  
+mat-toolbar {
+  background: #004a9f;
+  color: yellowgreen;
+}
+
+mat-sidenav {
+  margin: 5px;
+  width: 250px;
+  border-right: none;
+  background: #002b5c;
+  color: yellow;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.content {
+  height: calc(100vh - 98px);
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  color: lightgray;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+
+// .sidenav-container {
+//     height: 100%;
+//   }
+
+//   .sidenav {
+//     width: 200px;
+//     background-color:khaki
+//     ;
+//   }
+
+//   // .sidenav .mat-toolbar {
+//   //   background: inherit;
+//   // }
+
+//   .mat-toolbar.mat-primary {
+//     position: sticky;
+//     top: 0;
+//     z-index: 1;
+//   }
+
   .example-spacer {
     flex: 1 1 auto;
   }
-  
+
   .profile-card {
     text-align: center;
     padding: 0 20px 20px 20px;
@@ -30,3 +67,30 @@
       border-radius: 50%;
    }
   }
+
+  mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+  }
+
+  .mat-sidenav {
+    width: 220px;
+    padding: 5px;
+    margin:5px;
+    background: #002b5c;
+    color: yellowgreen;
+    font-size: 1.2em
+  }
+
+  button.menu-button {
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+//   .mat-icon {
+//     margin: 10px;
+//     border: 20px;
+//   }
+

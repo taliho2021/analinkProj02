@@ -1,0 +1,83 @@
+<h1>Clients Main Screen</h1>
+
+<!-- Added filter capability -->
+<mat-form-field appearance='standard'>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup) = 'applyFilter($event)' placeholder="Ex. Mia" #input>
+</mat-form-field>
+
+
+<div class="container">
+  <mat-table  class="mat-elevation-z8 table table-striped"
+              [dataSource] ='dataSource'
+              matSort
+              cdkDropList
+              cdkDropListOrientation="horizontal"
+              (cdkDropListDropped)="drop($event)">
+
+       <!-- ID Column -->
+      <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Customer ID</mat-header-cell>
+          <mat-cell  mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <!-- Country Column -->
+        <ng-container matColumnDef="country">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Country</mat-header-cell>
+          <mat-cell  mat-cell *matCellDef="let element"> {{element.country.name}} </mat-cell>
+        </ng-container>
+
+        <!-- Country Code Column -->
+        <ng-container matColumnDef="coCode">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Co Code</mat-header-cell>
+          <mat-cell  mat-cell *matCellDef="let element"> {{element.country.code}} </mat-cell>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Added Date</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+          <mat-cell  mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+        </ng-container>
+
+        <!-- Activity Column -->
+        <ng-container matColumnDef="activity">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Activity</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.activity}} </mat-cell>
+        </ng-container>
+
+        <!-- Representative -->
+        <ng-container matColumnDef="representative">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Representative</mat-header-cell>
+          <mat-cell  mat-cell *matCellDef="let element"> {{element.representative.name}} </mat-cell>
+        </ng-container>
+
+        <!-- Balance Column -->
+        <ng-container matColumnDef="balance">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Balance</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.balance | currency}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"
+              (click)='onRowClicked(row)'>
+        <app-client-detail [client]='row'></app-client-detail>
+        </mat-row>
+  </mat-table>
+  <mat-paginator
+      [pageSizeOptions] ='pageSizeOptions'
+      aria-label="Select page"
+      >
+  </mat-paginator>
+</div>

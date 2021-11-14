@@ -1,0 +1,26 @@
+<h1>Customers Page</h1>
+
+<div class="container">
+  <table class="table table-striped" matSort (matSortChange) ='sortData($event)'>
+    <thead>
+      <tr>
+        <th mat-sort-header='id'>ID</th>
+        <th mat-sort-heade='name'>Name</th>
+        <th mat-sort-header='company'>Company</th>
+        <th mat-sort-header='status'>Status</th>
+        <th mat-sort-header='activity'>Activity</th>
+        <th mat-sort-header='balance'>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cus of customers">
+        <td>{{ cus.id }}</td>
+        <td>{{ cus.name}}</td>
+        <td>{{ cus.company }}</td>
+        <td>{{ cus.status }} </td>
+        <td>{{ cus.activity }}</td>
+        <td>{{ cus.balance | currency}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

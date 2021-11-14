@@ -1,0 +1,34 @@
+<div *ngIf ='importer' class='container'>
+
+  <h2>{{ importer.name | uppercase  }}  Details </h2>
+
+    <div class='row mb-3' style='height: 3rem; width:auto'>
+      <span class='col-4'>Importer Id: </span>
+      <span class='col-6'>{{ importer.clientId }} </span>  
+    </div>
+    <div class='row mb-3' style='height: 3rem; width:auto'>
+      <span class='col-4'>Importer Name: </span>
+      <span class='col-6'> {{importer.name}}</span> 
+     </div>
+    <div class='row mb-3' style='height: 3rem; width:auto'>
+      <span class='col-4'>Importer Address 1: </span>
+      <span class='col-6'>{{ importer.address1 }} </span>
+    </div>
+    <div class='row mb-3' style='height: 3rem; width:auto'>
+      <span class='col-4'>Importer Address 2: </span>
+      <span class='col-6'> {{ importer.address2 }} </span>
+    </div>
+    <div class='row mb-3' style='height: 3rem; width:auto'>
+      <span class='col-4'>Importer City: </span> 
+      <span class='col-6'>{{ importer.city }} </span>
+    </div>
+    <div class='row mb-3' style='height: 3rem; width:auto'>
+      <span class='col-4'>Importer State: </span>
+      <span class='col-6'> {{ importer.state }} </span>
+    </div>
+    <div class='row mb-3' style='height: 3rem; width:auto'>
+      <span class='col-4'>Importer Phone #: </span>
+      <span class='col-6'>{{ importer.phone1 }} </span>
+    </div>
+
+</div>

@@ -1,0 +1,184 @@
+<h1 style='text-align: center; color:slategray'> Form Using NG Bootstrap</h1>
+
+<form  [formGroup] ='importerForm' (ngSubmit)='onSubmit()'>
+<table class='table table-striped'> 
+  <tr class='table-primary'>
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </tr>
+  <div class="row"><span style="font-weight: 600">Dates</span>
+     <div class="col">
+      <label for="eDate">Export</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="lDate">Loading</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="iDate">Import</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="uDate">Unloading</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="rDate">Ready</label>
+      <input type="date">
+    </div>
+    <div class="col">
+      <label for="dDate">Delivery</label>
+      <input type="date">
+    </div>
+  </div>
+  
+  <tr class="table-secondary">
+    <td>col 1</td>
+    <td>col 2</td>
+    <td>col 3</td>
+  </tr>
+  <tr class="table-success">
+    <td>col 1</td>
+    <td>col 2</td>
+    <td>col 3</td>
+  </tr>
+  <tr class="table-danger">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <tr class="table-warning">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <tr class="table-info">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <tr class="table-light">
+    <td class="col">col 1</td>
+    <td class="col">col 2</td>
+    <td class="col">col 3</td>
+  </tr>
+  <div class="row">Row 9
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </div>
+  <div class="row">Row 10
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </div>
+  <div class="row">Row 11
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </div>
+  <div class="row">Row 12
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </div>
+  <div class="row">Row 13
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </div>
+  <div class="row">Row 14
+    <div class="col">col 1</div>
+    <div class="col">col 2</div>
+    <div class="col">col 3</div>
+  </div>
+  
+</table>
+<button type='button' (click)='addImporter()'>Add Importer </button>
+</form>
+
+
+<form  [formGroup] ='importerForm'  (ngSubmit)="onSubmit()" class='angForm'>
+    <div formArrayName ='importers'>
+        <div *ngFor =' let imp of importers().controls; let impIndex=index'>
+            <div [formGroupName]="impIndex"
+                style='border: 1px solid blue; padding: 10px; width:800px; margin:5px'>
+
+                <label for="name">Company Name:</label>
+                <input type="text" formControlName='name'>
+
+                <label for='address1'>  Address 1: </label>
+                <input type="text" formControlName='address1'>
+
+                <label for="address2"> Address 2:</label>
+                <input type="text" formControlName='address2'> -->
+
+                <label for='city'>  City </label>
+                <input type="text" formControlName='city'>
+
+                <label for="state"> State</label>
+                <input type="text" formControlName='state'>
+
+                <label for='postalCode'> Postal Code: </label>
+                <input type="text" formControlName='postalCode'>
+
+                <label for="country"> Country :</label>
+                <input type="text" formControlName='country'>
+
+                <label for='phone1'> Phone 1: </label>
+                <input type="text" formControlName='phone1'>
+
+                <label for="email"> Email :</label>
+                <input type="email" formControlName='email'>
+
+                <label for='website'> Website </label>
+                <input type="url" formControlName='website'>
+
+                <div formGroupName='htsGroup'>
+                    <h2>HTS Information</h2>
+                        <label for='htsNo'> HTS #: </label>
+                        <input type="text" formControlName='htsNo'>
+
+                        <label for="description"> Description</label>
+                        <input type="text" formControlName='description'>
+
+                        <label for='spi'> SPI </label>
+                        <input type="text" formControlName='spi'>
+
+                </div>
+
+
+                <div formArrayName='pgas'>
+                  <h2>PGA Information</h2>
+                  <div *ngFor='let pga of importerPga(impIndex).controls; let pgaIndex=index'>
+                    <div [formGroupName]="pgaIndex">
+                        <label for='pgaName'> {{pgaIndex}} PGA Agency: </label>
+                        <input type="text" formControlName='pgaName'>
+
+                        <label for="pgaCode"> PGA Code</label>
+                        <input type="text" formControlName='pgaCode'>
+
+                        <label for='pgaMfr'> Manufacturer </label>
+                        <input type="text" formControlName='pgaMfr'>
+
+                        <label for='pgaImp'> Importer </label>
+                        <input type="text" formControlName='pgaImp'>
+
+                        <button (click)='removeImporterPga(impIndex, pgaIndex)'>Remove PGA</button>
+                    </div>
+                  </div>
+                    <button type='button' (click)='addImporterPga(impIndex)'>Add PGA</button>
+              </div>
+
+
+            </div>
+            <button type='button' (click)='removeImporter(impIndex)'>Delete Importer </button>
+        </div>
+    </div>
+    <button type='button' (click)='addImporter()'>Add Importer </button>
+
+</form>
+
+{{ this.importerForm.value | json}}

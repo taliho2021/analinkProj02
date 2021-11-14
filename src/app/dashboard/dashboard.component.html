@@ -1,1 +1,137 @@
-<p>dashboard works!</p>
+<h1>Summary of Activities</h1>
+
+<mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">account_box</mat-icon>
+          Sales
+      </ng-template>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Sales</mat-card-title>
+          <mat-card-subtitle>Gross Sales</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxLayout='row' fxLayoutAlign='space-around center'>
+          <app-bar-chart fxFlex='40'></app-bar-chart>
+          <app-bubble-chart fxFlex='40'></app-bubble-chart>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">assessment</mat-icon>
+        Compliance
+      </ng-template>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Compliance Matters</mat-card-title>
+          <mat-card-subtitle>Various Issues</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxLayout='row' fxLayoutAlign='space-around center'>
+          <app-doughnut-chart fxFlex='40'></app-doughnut-chart>
+          <app-pie-chart fxFlex='40'></app-pie-chart>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">dns</mat-icon>
+        Profit & Loss
+      </ng-template>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Profit & Loss</mat-card-title>
+          <mat-card-subtitle>Annual, Monthly, Compared to Previous Years</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxLayout='row' fxLayoutAlign='space-around center'>
+          <app-bar-chart fxFlex='40'></app-bar-chart>
+          <app-radar-chart fxFlex='40'></app-radar-chart>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+
+<form class="container-fluid">
+    <mat-card>
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Choose a date</mat-label>
+            <input matInput placeholder="pat@example.com" type="month" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="pat@example.com" type="password" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Time of Day</mat-label>
+            <input matInput placeholder="pat@example.com" type="time" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Choose a date</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="date" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </mat-card>
+</form>
